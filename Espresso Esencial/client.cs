@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Espresso_Esencial
 {
-    public partial class order : Form
+    public partial class client : Form
     {
-        public order()
+        public client()
         {
             InitializeComponent();
+        }
+
+        private void client_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void lnkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -24,10 +29,10 @@ namespace Espresso_Esencial
             this.Close();
         }
 
-        private void lnkCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkPedido_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            client client = new client();
-            client.Show();
+            order order = new order();
+            order.Show();
             this.Close();
         }
 

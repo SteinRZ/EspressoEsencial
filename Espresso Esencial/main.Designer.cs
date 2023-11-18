@@ -28,34 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCerrar = new Button();
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            btnProducto = new Button();
+            btnEmpleado = new Button();
+            btnCategoria = new Button();
+            btnProveedor = new Button();
             btnCerrarSesion = new Button();
+            btnPedido = new Button();
+            panel1 = new Panel();
+            btnCliente = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnCerrar
-            // 
-            btnCerrar.Location = new Point(920, 13);
-            btnCerrar.Margin = new Padding(4);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(96, 32);
-            btnCerrar.TabIndex = 1;
-            btnCerrar.Text = "Cerrar";
-            btnCerrar.UseVisualStyleBackColor = true;
-            btnCerrar.Click += btnCerrar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(13, 16);
             label1.Name = "label1";
             label1.Size = new Size(177, 26);
             label1.TabIndex = 2;
@@ -64,123 +55,170 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 50);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(13, 63);
             label2.Name = "label2";
             label2.Size = new Size(240, 21);
             label2.TabIndex = 3;
             label2.Text = "| Seleccione la opcion a gestionar";
             // 
-            // button1
+            // btnProducto
             // 
-            button1.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(80, 90);
-            button1.Name = "button1";
-            button1.Size = new Size(250, 250);
-            button1.TabIndex = 4;
-            button1.Text = "Pedido";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = true;
+            btnProducto.BackColor = Color.White;
+            btnProducto.BackgroundImage = Properties.Resources.producto;
+            btnProducto.BackgroundImageLayout = ImageLayout.Stretch;
+            btnProducto.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProducto.ForeColor = Color.Black;
+            btnProducto.Location = new Point(615, 110);
+            btnProducto.Name = "btnProducto";
+            btnProducto.Size = new Size(250, 250);
+            btnProducto.TabIndex = 3;
+            btnProducto.Text = "Producto";
+            btnProducto.TextAlign = ContentAlignment.BottomCenter;
+            btnProducto.UseVisualStyleBackColor = false;
+            btnProducto.Click += btnProducto_Click;
             // 
-            // button2
+            // btnEmpleado
             // 
-            button2.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(405, 90);
-            button2.Name = "button2";
-            button2.Size = new Size(250, 250);
-            button2.TabIndex = 5;
-            button2.Text = "Cliente";
-            button2.TextAlign = ContentAlignment.BottomCenter;
-            button2.UseVisualStyleBackColor = true;
+            btnEmpleado.BackColor = Color.White;
+            btnEmpleado.BackgroundImage = Properties.Resources.empleado;
+            btnEmpleado.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEmpleado.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEmpleado.ForeColor = Color.Black;
+            btnEmpleado.Location = new Point(905, 110);
+            btnEmpleado.Name = "btnEmpleado";
+            btnEmpleado.Size = new Size(250, 250);
+            btnEmpleado.TabIndex = 4;
+            btnEmpleado.Text = "Empleado";
+            btnEmpleado.TextAlign = ContentAlignment.BottomCenter;
+            btnEmpleado.UseVisualStyleBackColor = false;
+            btnEmpleado.Click += btnEmpleado_Click;
             // 
-            // button3
+            // btnCategoria
             // 
-            button3.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(730, 90);
-            button3.Name = "button3";
-            button3.Size = new Size(250, 250);
-            button3.TabIndex = 6;
-            button3.Text = "Producto";
-            button3.TextAlign = ContentAlignment.BottomCenter;
-            button3.UseVisualStyleBackColor = true;
+            btnCategoria.BackColor = Color.White;
+            btnCategoria.BackgroundImage = Properties.Resources.categoria;
+            btnCategoria.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCategoria.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCategoria.ForeColor = Color.Black;
+            btnCategoria.Location = new Point(45, 374);
+            btnCategoria.Name = "btnCategoria";
+            btnCategoria.Size = new Size(250, 250);
+            btnCategoria.TabIndex = 5;
+            btnCategoria.Text = "Categoria";
+            btnCategoria.TextAlign = ContentAlignment.BottomCenter;
+            btnCategoria.UseVisualStyleBackColor = false;
+            btnCategoria.Click += btnCategoria_Click;
             // 
-            // button4
+            // btnProveedor
             // 
-            button4.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(80, 360);
-            button4.Name = "button4";
-            button4.Size = new Size(250, 250);
-            button4.TabIndex = 7;
-            button4.Text = "Empleado";
-            button4.TextAlign = ContentAlignment.BottomCenter;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(405, 360);
-            button5.Name = "button5";
-            button5.Size = new Size(250, 250);
-            button5.TabIndex = 8;
-            button5.Text = "Categoria";
-            button5.TextAlign = ContentAlignment.BottomCenter;
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.Location = new Point(730, 360);
-            button6.Name = "button6";
-            button6.Size = new Size(250, 250);
-            button6.TabIndex = 9;
-            button6.Text = "Proveedor";
-            button6.TextAlign = ContentAlignment.BottomCenter;
-            button6.UseVisualStyleBackColor = true;
+            btnProveedor.BackColor = Color.White;
+            btnProveedor.BackgroundImage = Properties.Resources.proveedor;
+            btnProveedor.BackgroundImageLayout = ImageLayout.Stretch;
+            btnProveedor.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProveedor.ForeColor = Color.Black;
+            btnProveedor.Location = new Point(330, 374);
+            btnProveedor.Name = "btnProveedor";
+            btnProveedor.Size = new Size(250, 250);
+            btnProveedor.TabIndex = 6;
+            btnProveedor.Text = "Proveedor";
+            btnProveedor.TextAlign = ContentAlignment.BottomCenter;
+            btnProveedor.UseVisualStyleBackColor = false;
+            btnProveedor.Click += btnProveedor_Click;
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.Location = new Point(797, 13);
+            btnCerrarSesion.BackColor = Color.White;
+            btnCerrarSesion.ForeColor = SystemColors.ControlText;
+            btnCerrarSesion.Location = new Point(1057, 14);
             btnCerrarSesion.Margin = new Padding(4);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(115, 32);
-            btnCerrarSesion.TabIndex = 10;
+            btnCerrarSesion.TabIndex = 0;
             btnCerrarSesion.Text = "Cerrar sesion";
-            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
+            // 
+            // btnPedido
+            // 
+            btnPedido.BackColor = Color.White;
+            btnPedido.BackgroundImage = Properties.Resources.pedido;
+            btnPedido.BackgroundImageLayout = ImageLayout.Stretch;
+            btnPedido.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPedido.ForeColor = Color.Black;
+            btnPedido.Location = new Point(45, 110);
+            btnPedido.Name = "btnPedido";
+            btnPedido.Size = new Size(250, 250);
+            btnPedido.TabIndex = 1;
+            btnPedido.Text = "Pedido";
+            btnPedido.TextAlign = ContentAlignment.BottomCenter;
+            btnPedido.UseVisualStyleBackColor = false;
+            btnPedido.Click += btnPedido_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(btnCerrarSesion);
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(-1, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1185, 96);
+            panel1.TabIndex = 12;
+            // 
+            // btnCliente
+            // 
+            btnCliente.BackColor = Color.White;
+            btnCliente.BackgroundImage = Properties.Resources.cliente;
+            btnCliente.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCliente.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCliente.ForeColor = Color.Black;
+            btnCliente.Location = new Point(330, 110);
+            btnCliente.Name = "btnCliente";
+            btnCliente.Size = new Size(250, 250);
+            btnCliente.TabIndex = 2;
+            btnCliente.Text = "Cliente";
+            btnCliente.TextAlign = ContentAlignment.BottomCenter;
+            btnCliente.UseVisualStyleBackColor = false;
+            btnCliente.Click += btnCliente_Click_1;
             // 
             // main
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1029, 630);
+            BackColor = Color.White;
+            ClientSize = new Size(1184, 681);
             ControlBox = false;
-            Controls.Add(btnCerrarSesion);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(btnCerrar);
+            Controls.Add(btnCliente);
+            Controls.Add(panel1);
+            Controls.Add(btnPedido);
+            Controls.Add(btnProveedor);
+            Controls.Add(btnCategoria);
+            Controls.Add(btnEmpleado);
+            Controls.Add(btnProducto);
+            Cursor = Cursors.Hand;
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = Color.DarkBlue;
             Margin = new Padding(4);
             Name = "main";
             Text = "Espresso Esencial - Principal";
+            Load += main_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button btnCerrar;
         private Label label1;
         private Label label2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button btnProducto;
+        private Button btnEmpleado;
+        private Button btnCategoria;
+        private Button btnProveedor;
         private Button btnCerrarSesion;
+        private Button btnPedido;
+        private Panel panel1;
+        private Button btnCliente;
     }
 }

@@ -44,13 +44,15 @@
             // 
             // btnCerrar
             // 
-            btnCerrar.Location = new Point(1075, 13);
+            btnCerrar.BackColor = Color.White;
+            btnCerrar.Cursor = Cursors.Hand;
+            btnCerrar.Location = new Point(365, 13);
             btnCerrar.Margin = new Padding(4);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(96, 32);
             btnCerrar.TabIndex = 0;
             btnCerrar.Text = "Cerrar";
-            btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.UseVisualStyleBackColor = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
             // pictureBox1
@@ -65,22 +67,24 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.FromArgb(64, 64, 64);
             panel1.Controls.Add(txtContraseña);
             panel1.Controls.Add(label4);
+            panel1.Controls.Add(btnCerrar);
             panel1.Controls.Add(txtCorreoElectronico);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnEntrar);
-            panel1.Location = new Point(729, 52);
+            panel1.Location = new Point(710, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(442, 617);
+            panel1.Size = new Size(476, 681);
             panel1.TabIndex = 2;
             // 
             // txtContraseña
             // 
             txtContraseña.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContraseña.Location = new Point(19, 325);
+            txtContraseña.Location = new Point(30, 360);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(407, 31);
             txtContraseña.TabIndex = 6;
@@ -89,7 +93,8 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(19, 300);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(30, 335);
             label4.Name = "label4";
             label4.Size = new Size(119, 26);
             label4.TabIndex = 5;
@@ -98,7 +103,7 @@
             // txtCorreoElectronico
             // 
             txtCorreoElectronico.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCorreoElectronico.Location = new Point(19, 255);
+            txtCorreoElectronico.Location = new Point(30, 290);
             txtCorreoElectronico.Name = "txtCorreoElectronico";
             txtCorreoElectronico.Size = new Size(407, 31);
             txtCorreoElectronico.TabIndex = 4;
@@ -107,7 +112,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(19, 230);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(30, 265);
             label3.Name = "label3";
             label3.Size = new Size(180, 26);
             label3.TabIndex = 3;
@@ -117,7 +123,8 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(19, 195);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(30, 230);
             label2.Name = "label2";
             label2.Size = new Size(324, 21);
             label2.TabIndex = 2;
@@ -127,7 +134,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Franklin Gothic Medium", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(19, 130);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(30, 165);
             label1.Name = "label1";
             label1.Size = new Size(407, 37);
             label1.TabIndex = 1;
@@ -135,23 +143,25 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(182, 385);
+            btnEntrar.BackColor = Color.White;
+            btnEntrar.Cursor = Cursors.Hand;
+            btnEntrar.Location = new Point(193, 420);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(96, 33);
-            btnEntrar.TabIndex = 0;
+            btnEntrar.TabIndex = 1;
             btnEntrar.Text = "Entrar";
-            btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.UseVisualStyleBackColor = false;
             btnEntrar.Click += btnEntrar_Click;
             // 
             // login
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(1184, 681);
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
-            Controls.Add(btnCerrar);
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "login";

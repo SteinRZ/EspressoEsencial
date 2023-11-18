@@ -1,6 +1,6 @@
 ﻿namespace Espresso_Esencial
 {
-    partial class order
+    partial class product
     {
         /// <summary>
         /// Required designer variable.
@@ -34,8 +34,8 @@
             lnkProveedor = new LinkLabel();
             lnkCategoria = new LinkLabel();
             lnkEmpleado = new LinkLabel();
-            lnkProducto = new LinkLabel();
             lnkCliente = new LinkLabel();
+            lnkPedido = new LinkLabel();
             lnkInicio = new LinkLabel();
             panel2 = new Panel();
             label3 = new Label();
@@ -57,9 +57,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(13, 26);
             label1.Name = "label1";
-            label1.Size = new Size(85, 30);
+            label1.Size = new Size(106, 30);
             label1.TabIndex = 4;
-            label1.Text = "Pedido";
+            label1.Text = "Producto";
             // 
             // panel1
             // 
@@ -68,14 +68,14 @@
             panel1.Controls.Add(lnkProveedor);
             panel1.Controls.Add(lnkCategoria);
             panel1.Controls.Add(lnkEmpleado);
-            panel1.Controls.Add(lnkProducto);
             panel1.Controls.Add(lnkCliente);
+            panel1.Controls.Add(lnkPedido);
             panel1.Controls.Add(lnkInicio);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(-1, -1);
+            panel1.Location = new Point(0, -1);
             panel1.Name = "panel1";
             panel1.Size = new Size(212, 683);
-            panel1.TabIndex = 5;
+            panel1.TabIndex = 12;
             // 
             // label4
             // 
@@ -130,33 +130,33 @@
             lnkEmpleado.Text = "Empleado";
             lnkEmpleado.LinkClicked += lnkEmpleado_LinkClicked;
             // 
-            // lnkProducto
-            // 
-            lnkProducto.ActiveLinkColor = Color.Black;
-            lnkProducto.AutoSize = true;
-            lnkProducto.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lnkProducto.LinkColor = Color.White;
-            lnkProducto.Location = new Point(13, 257);
-            lnkProducto.Name = "lnkProducto";
-            lnkProducto.Size = new Size(93, 26);
-            lnkProducto.TabIndex = 2;
-            lnkProducto.TabStop = true;
-            lnkProducto.Text = "Producto";
-            lnkProducto.LinkClicked += lnkProducto_LinkClicked;
-            // 
             // lnkCliente
             // 
             lnkCliente.ActiveLinkColor = Color.Black;
             lnkCliente.AutoSize = true;
             lnkCliente.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lnkCliente.LinkColor = Color.White;
-            lnkCliente.Location = new Point(13, 213);
+            lnkCliente.Location = new Point(13, 257);
             lnkCliente.Name = "lnkCliente";
             lnkCliente.Size = new Size(74, 26);
-            lnkCliente.TabIndex = 1;
+            lnkCliente.TabIndex = 2;
             lnkCliente.TabStop = true;
             lnkCliente.Text = "Cliente";
             lnkCliente.LinkClicked += lnkCliente_LinkClicked;
+            // 
+            // lnkPedido
+            // 
+            lnkPedido.ActiveLinkColor = Color.Black;
+            lnkPedido.AutoSize = true;
+            lnkPedido.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lnkPedido.LinkColor = Color.White;
+            lnkPedido.Location = new Point(13, 213);
+            lnkPedido.Name = "lnkPedido";
+            lnkPedido.Size = new Size(74, 26);
+            lnkPedido.TabIndex = 1;
+            lnkPedido.TabStop = true;
+            lnkPedido.Text = "Pedido";
+            lnkPedido.LinkClicked += lnkPedido_LinkClicked;
             // 
             // lnkInicio
             // 
@@ -197,30 +197,30 @@
             panel3.BackColor = Color.MidnightBlue;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(label1);
-            panel3.Location = new Point(214, -1);
+            panel3.Location = new Point(215, -1);
             panel3.Name = "panel3";
             panel3.Size = new Size(970, 81);
-            panel3.TabIndex = 7;
+            panel3.TabIndex = 13;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(739, 60);
+            label2.Location = new Point(728, 60);
             label2.Name = "label2";
-            label2.Size = new Size(229, 21);
+            label2.Size = new Size(242, 21);
             label2.TabIndex = 5;
-            label2.Text = "Gestion del apartado de pedido.";
+            label2.Text = "Gestion del apartado de producto.";
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(214, 83);
+            tabControl1.Location = new Point(215, 83);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(970, 599);
-            tabControl1.TabIndex = 8;
+            tabControl1.TabIndex = 14;
             // 
             // tabPage1
             // 
@@ -242,20 +242,19 @@
             tabPage2.Text = "Consultar";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // order
+            // product
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(1184, 681);
             ControlBox = false;
-            Controls.Add(tabControl1);
-            Controls.Add(panel3);
             Controls.Add(panel1);
+            Controls.Add(panel3);
+            Controls.Add(tabControl1);
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
-            Name = "order";
-            Text = "Espresso Esencial - Pedido";
+            Name = "product";
+            Text = "Espresso Esencial - Producto";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -267,21 +266,22 @@
         }
 
         #endregion
+
         private Label label1;
         private Panel panel1;
-        private Panel panel3;
-        private Label label2;
-        private Panel panel2;
-        private Label label3;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private LinkLabel lnkInicio;
+        private Label label4;
         private LinkLabel lnkProveedor;
         private LinkLabel lnkCategoria;
         private LinkLabel lnkEmpleado;
-        private LinkLabel lnkProducto;
         private LinkLabel lnkCliente;
-        private Label label4;
+        private LinkLabel lnkPedido;
+        private LinkLabel lnkInicio;
+        private Panel panel2;
+        private Label label3;
+        private Panel panel3;
+        private Label label2;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }

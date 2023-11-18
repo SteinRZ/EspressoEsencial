@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Espresso_Esencial
 {
-    public partial class order : Form
+    public partial class product : Form
     {
-        public order()
+        public product()
         {
             InitializeComponent();
         }
@@ -24,17 +24,17 @@ namespace Espresso_Esencial
             this.Close();
         }
 
+        private void lnkPedido_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            order order = new order();
+            order.Show();
+            this.Close();
+        }
+
         private void lnkCliente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             client client = new client();
             client.Show();
-            this.Close();
-        }
-
-        private void lnkProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            product product = new product();
-            product.Show();
             this.Close();
         }
 
@@ -55,7 +55,7 @@ namespace Espresso_Esencial
         private void lnkProveedor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             supplier supplier = new supplier();
-            supplier.Show();
+            supplier.Show(); 
             this.Close();
         }
     }
