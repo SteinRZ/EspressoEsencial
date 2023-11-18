@@ -155,7 +155,7 @@
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "login";
-            Text = "Espresso Esencial - Login";
+            Text = "Espresso Esencial - Inicio de sesion";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
