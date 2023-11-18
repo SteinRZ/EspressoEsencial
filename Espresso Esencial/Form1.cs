@@ -14,7 +14,9 @@ namespace Espresso_Esencial
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-
+            main main = new main();
+            main.Show();
+            this.Hide();
         }
     }
 }

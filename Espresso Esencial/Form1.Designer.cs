@@ -80,7 +80,7 @@
             // txtContraseña
             // 
             txtContraseña.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContraseña.Location = new Point(19, 290);
+            txtContraseña.Location = new Point(19, 325);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(407, 31);
             txtContraseña.TabIndex = 6;
@@ -89,7 +89,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(19, 265);
+            label4.Location = new Point(19, 300);
             label4.Name = "label4";
             label4.Size = new Size(119, 26);
             label4.TabIndex = 5;
@@ -98,7 +98,7 @@
             // txtCorreoElectronico
             // 
             txtCorreoElectronico.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCorreoElectronico.Location = new Point(19, 220);
+            txtCorreoElectronico.Location = new Point(19, 255);
             txtCorreoElectronico.Name = "txtCorreoElectronico";
             txtCorreoElectronico.Size = new Size(407, 31);
             txtCorreoElectronico.TabIndex = 4;
@@ -107,7 +107,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(19, 195);
+            label3.Location = new Point(19, 230);
             label3.Name = "label3";
             label3.Size = new Size(180, 26);
             label3.TabIndex = 3;
@@ -117,7 +117,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(19, 160);
+            label2.Location = new Point(19, 195);
             label2.Name = "label2";
             label2.Size = new Size(324, 21);
             label2.TabIndex = 2;
@@ -127,7 +127,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Franklin Gothic Medium", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(19, 95);
+            label1.Location = new Point(19, 130);
             label1.Name = "label1";
             label1.Size = new Size(407, 37);
             label1.TabIndex = 1;
@@ -135,7 +135,7 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(182, 350);
+            btnEntrar.Location = new Point(182, 385);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(96, 33);
             btnEntrar.TabIndex = 0;
