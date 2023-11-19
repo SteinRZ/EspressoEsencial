@@ -58,5 +58,12 @@ namespace Espresso_Esencial
             supplier.Show();
             this.Close();
         }
+
+        private void lnkIngrediente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ingredient ingredient = new ingredient();
+            ingredient.Show();
+            this.Close();
+        }
     }
 }

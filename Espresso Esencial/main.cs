@@ -75,5 +75,12 @@ namespace Espresso_Esencial
             client.Show();
             this.Hide();
         }
+
+        private void btnIngrediente_Click(object sender, EventArgs e)
+        {
+            ingredient ingredient = new ingredient();
+            ingredient.Show();
+            this.Close();
+        }
     }
 }

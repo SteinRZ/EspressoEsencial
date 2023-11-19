@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplier));
             label1 = new Label();
             panel1 = new Panel();
+            label7 = new Label();
+            lblEmpleado = new Label();
+            lnkIngrediente = new LinkLabel();
             lnkCategoria = new LinkLabel();
-            label4 = new Label();
             lnkEmpleado = new LinkLabel();
             lnkPedido = new LinkLabel();
             lnkProducto = new LinkLabel();
@@ -41,13 +44,25 @@
             label3 = new Label();
             panel3 = new Panel();
             label2 = new Label();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            gpxProveedorAgregar = new GroupBox();
+            btnProveedorCancelar = new Button();
+            txtProveedorTelefono = new TextBox();
+            btnProveedorAgregar = new Button();
+            txtProveedorNombre = new TextBox();
+            label11 = new Label();
+            label12 = new Label();
+            gpxCategoriaConsulta = new GroupBox();
+            btnProveedorEliminar = new Button();
+            btnProveedorModificar = new Button();
+            dgvProveedorConsultar = new DataGridView();
+            Nombre = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            tabControl1.SuspendLayout();
+            gpxProveedorAgregar.SuspendLayout();
+            gpxCategoriaConsulta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProveedorConsultar).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -64,18 +79,56 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(lblEmpleado);
+            panel1.Controls.Add(lnkIngrediente);
             panel1.Controls.Add(lnkCategoria);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(lnkEmpleado);
             panel1.Controls.Add(lnkPedido);
             panel1.Controls.Add(lnkProducto);
             panel1.Controls.Add(lnkCliente);
             panel1.Controls.Add(lnkInicio);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(0, -1);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(212, 683);
             panel1.TabIndex = 12;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(0, 2);
+            label7.Name = "label7";
+            label7.Size = new Size(84, 21);
+            label7.TabIndex = 20;
+            label7.Text = "Empleado:";
+            // 
+            // lblEmpleado
+            // 
+            lblEmpleado.AutoSize = true;
+            lblEmpleado.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmpleado.ForeColor = Color.White;
+            lblEmpleado.Location = new Point(0, 25);
+            lblEmpleado.Name = "lblEmpleado";
+            lblEmpleado.Size = new Size(140, 21);
+            lblEmpleado.TabIndex = 19;
+            lblEmpleado.Text = "nombre_empleado";
+            // 
+            // lnkIngrediente
+            // 
+            lnkIngrediente.ActiveLinkColor = Color.Black;
+            lnkIngrediente.AutoSize = true;
+            lnkIngrediente.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lnkIngrediente.LinkColor = Color.White;
+            lnkIngrediente.Location = new Point(13, 446);
+            lnkIngrediente.Name = "lnkIngrediente";
+            lnkIngrediente.Size = new Size(114, 26);
+            lnkIngrediente.TabIndex = 17;
+            lnkIngrediente.TabStop = true;
+            lnkIngrediente.Text = "Ingrediente";
+            lnkIngrediente.LinkClicked += lnkIngrediente_LinkClicked;
             // 
             // lnkCategoria
             // 
@@ -83,7 +136,7 @@
             lnkCategoria.AutoSize = true;
             lnkCategoria.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lnkCategoria.LinkColor = Color.White;
-            lnkCategoria.Location = new Point(13, 396);
+            lnkCategoria.Location = new Point(13, 399);
             lnkCategoria.Name = "lnkCategoria";
             lnkCategoria.Size = new Size(98, 26);
             lnkCategoria.TabIndex = 18;
@@ -91,24 +144,13 @@
             lnkCategoria.Text = "Categoria";
             lnkCategoria.LinkClicked += lnkCategoria_LinkClicked;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(8, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(140, 21);
-            label4.TabIndex = 0;
-            label4.Text = "nombre_empleado";
-            // 
             // lnkEmpleado
             // 
             lnkEmpleado.ActiveLinkColor = Color.Black;
             lnkEmpleado.AutoSize = true;
             lnkEmpleado.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lnkEmpleado.LinkColor = Color.White;
-            lnkEmpleado.Location = new Point(13, 347);
+            lnkEmpleado.Location = new Point(13, 350);
             lnkEmpleado.Name = "lnkEmpleado";
             lnkEmpleado.Size = new Size(101, 26);
             lnkEmpleado.TabIndex = 17;
@@ -136,7 +178,7 @@
             lnkProducto.AutoSize = true;
             lnkProducto.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lnkProducto.LinkColor = Color.White;
-            lnkProducto.Location = new Point(13, 298);
+            lnkProducto.Location = new Point(13, 301);
             lnkProducto.Name = "lnkProducto";
             lnkProducto.Size = new Size(93, 26);
             lnkProducto.TabIndex = 16;
@@ -150,7 +192,7 @@
             lnkCliente.AutoSize = true;
             lnkCliente.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lnkCliente.LinkColor = Color.White;
-            lnkCliente.Location = new Point(13, 254);
+            lnkCliente.Location = new Point(13, 257);
             lnkCliente.Name = "lnkCliente";
             lnkCliente.Size = new Size(74, 26);
             lnkCliente.TabIndex = 15;
@@ -212,35 +254,124 @@
             label2.TabIndex = 5;
             label2.Text = "Gestion del apartado de proveedor.";
             // 
-            // tabControl1
+            // gpxProveedorAgregar
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(215, 83);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(970, 599);
-            tabControl1.TabIndex = 14;
+            gpxProveedorAgregar.Controls.Add(btnProveedorCancelar);
+            gpxProveedorAgregar.Controls.Add(txtProveedorTelefono);
+            gpxProveedorAgregar.Controls.Add(btnProveedorAgregar);
+            gpxProveedorAgregar.Controls.Add(txtProveedorNombre);
+            gpxProveedorAgregar.Controls.Add(label11);
+            gpxProveedorAgregar.Controls.Add(label12);
+            gpxProveedorAgregar.Location = new Point(215, 86);
+            gpxProveedorAgregar.Name = "gpxProveedorAgregar";
+            gpxProveedorAgregar.Size = new Size(970, 172);
+            gpxProveedorAgregar.TabIndex = 16;
+            gpxProveedorAgregar.TabStop = false;
+            gpxProveedorAgregar.Text = "Agregar proveedor";
             // 
-            // tabPage1
+            // btnProveedorCancelar
             // 
-            tabPage1.Location = new Point(4, 30);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(962, 565);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Agregar";
-            tabPage1.UseVisualStyleBackColor = true;
+            btnProveedorCancelar.Cursor = Cursors.Hand;
+            btnProveedorCancelar.Location = new Point(14, 125);
+            btnProveedorCancelar.Name = "btnProveedorCancelar";
+            btnProveedorCancelar.Size = new Size(134, 34);
+            btnProveedorCancelar.TabIndex = 28;
+            btnProveedorCancelar.Text = "Cancelar";
+            btnProveedorCancelar.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // txtProveedorTelefono
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(962, 571);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Consultar";
-            tabPage2.UseVisualStyleBackColor = true;
+            txtProveedorTelefono.Location = new Point(111, 72);
+            txtProveedorTelefono.Name = "txtProveedorTelefono";
+            txtProveedorTelefono.Size = new Size(846, 26);
+            txtProveedorTelefono.TabIndex = 18;
+            // 
+            // btnProveedorAgregar
+            // 
+            btnProveedorAgregar.Cursor = Cursors.Hand;
+            btnProveedorAgregar.Location = new Point(809, 125);
+            btnProveedorAgregar.Name = "btnProveedorAgregar";
+            btnProveedorAgregar.Size = new Size(148, 34);
+            btnProveedorAgregar.TabIndex = 27;
+            btnProveedorAgregar.Text = "Agregar proveedor";
+            btnProveedorAgregar.UseVisualStyleBackColor = true;
+            // 
+            // txtProveedorNombre
+            // 
+            txtProveedorNombre.Location = new Point(111, 35);
+            txtProveedorNombre.Name = "txtProveedorNombre";
+            txtProveedorNombre.Size = new Size(846, 26);
+            txtProveedorNombre.TabIndex = 17;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(33, 75);
+            label11.Name = "label11";
+            label11.Size = new Size(72, 21);
+            label11.TabIndex = 16;
+            label11.Text = "Telefono:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(37, 38);
+            label12.Name = "label12";
+            label12.Size = new Size(68, 21);
+            label12.TabIndex = 15;
+            label12.Text = "Nombre:";
+            // 
+            // gpxCategoriaConsulta
+            // 
+            gpxCategoriaConsulta.Controls.Add(btnProveedorEliminar);
+            gpxCategoriaConsulta.Controls.Add(btnProveedorModificar);
+            gpxCategoriaConsulta.Controls.Add(dgvProveedorConsultar);
+            gpxCategoriaConsulta.Location = new Point(215, 264);
+            gpxCategoriaConsulta.Name = "gpxCategoriaConsulta";
+            gpxCategoriaConsulta.Size = new Size(970, 419);
+            gpxCategoriaConsulta.TabIndex = 17;
+            gpxCategoriaConsulta.TabStop = false;
+            gpxCategoriaConsulta.Text = "Consulta de proveedores";
+            // 
+            // btnProveedorEliminar
+            // 
+            btnProveedorEliminar.Cursor = Cursors.Hand;
+            btnProveedorEliminar.Location = new Point(792, 68);
+            btnProveedorEliminar.Name = "btnProveedorEliminar";
+            btnProveedorEliminar.Size = new Size(165, 40);
+            btnProveedorEliminar.TabIndex = 19;
+            btnProveedorEliminar.Text = "Eliminar";
+            btnProveedorEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnProveedorModificar
+            // 
+            btnProveedorModificar.Cursor = Cursors.Hand;
+            btnProveedorModificar.Location = new Point(792, 23);
+            btnProveedorModificar.Name = "btnProveedorModificar";
+            btnProveedorModificar.Size = new Size(165, 40);
+            btnProveedorModificar.TabIndex = 18;
+            btnProveedorModificar.Text = "Modificar";
+            btnProveedorModificar.UseVisualStyleBackColor = true;
+            // 
+            // dgvProveedorConsultar
+            // 
+            dgvProveedorConsultar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProveedorConsultar.Columns.AddRange(new DataGridViewColumn[] { Nombre, Telefono });
+            dgvProveedorConsultar.Location = new Point(6, 25);
+            dgvProveedorConsultar.Name = "dgvProveedorConsultar";
+            dgvProveedorConsultar.RowTemplate.Height = 25;
+            dgvProveedorConsultar.Size = new Size(780, 388);
+            dgvProveedorConsultar.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
             // 
             // supplier
             // 
@@ -248,10 +379,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 681);
             ControlBox = false;
+            Controls.Add(gpxProveedorAgregar);
+            Controls.Add(gpxCategoriaConsulta);
             Controls.Add(panel1);
             Controls.Add(panel3);
-            Controls.Add(tabControl1);
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "supplier";
             Text = "Espresso Esencial - Proveedor";
@@ -261,7 +394,10 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            tabControl1.ResumeLayout(false);
+            gpxProveedorAgregar.ResumeLayout(false);
+            gpxProveedorAgregar.PerformLayout();
+            gpxCategoriaConsulta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvProveedorConsultar).EndInit();
             ResumeLayout(false);
         }
 
@@ -269,19 +405,31 @@
 
         private Label label1;
         private Panel panel1;
-        private Label label4;
         private LinkLabel lnkPedido;
         private LinkLabel lnkInicio;
         private Panel panel2;
         private Label label3;
         private Panel panel3;
         private Label label2;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
         private LinkLabel lnkCategoria;
         private LinkLabel lnkEmpleado;
         private LinkLabel lnkProducto;
         private LinkLabel lnkCliente;
+        private LinkLabel lnkIngrediente;
+        private Label label7;
+        private Label lblEmpleado;
+        private GroupBox gpxProveedorAgregar;
+        private Button btnProveedorCancelar;
+        private TextBox txtProveedorTelefono;
+        private Button btnProveedorAgregar;
+        private TextBox txtProveedorNombre;
+        private Label label11;
+        private Label label12;
+        private GroupBox gpxCategoriaConsulta;
+        private Button btnProveedorEliminar;
+        private Button btnProveedorModificar;
+        private DataGridView dgvProveedorConsultar;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Telefono;
     }
 }

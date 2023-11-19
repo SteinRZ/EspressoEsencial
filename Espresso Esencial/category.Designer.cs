@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(category));
             label1 = new Label();
             panel1 = new Panel();
-            label4 = new Label();
+            label7 = new Label();
+            lblEmpleado = new Label();
+            lnkIngrediente = new LinkLabel();
             lnkProveedor = new LinkLabel();
             lnkEmpleado = new LinkLabel();
             lnkProducto = new LinkLabel();
@@ -41,13 +44,25 @@
             label3 = new Label();
             panel3 = new Panel();
             label2 = new Label();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            gpxCategoriaAgregar = new GroupBox();
+            label4 = new Label();
+            label5 = new Label();
+            txtCategoriaNombre = new TextBox();
+            txtCategoriaDescripcion = new TextBox();
+            btnCategoriaCancelar = new Button();
+            btnCategoriaAgregar = new Button();
+            gpxCategoriaConsulta = new GroupBox();
+            dgvCategoriaConsultar = new DataGridView();
+            btnClienteEliminar = new Button();
+            btnClienteModificar = new Button();
+            Nombre = new DataGridViewTextBoxColumn();
+            Descripcion = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            tabControl1.SuspendLayout();
+            gpxCategoriaAgregar.SuspendLayout();
+            gpxCategoriaConsulta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvCategoriaConsultar).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -64,7 +79,9 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 64);
-            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(lblEmpleado);
+            panel1.Controls.Add(lnkIngrediente);
             panel1.Controls.Add(lnkProveedor);
             panel1.Controls.Add(lnkEmpleado);
             panel1.Controls.Add(lnkProducto);
@@ -72,21 +89,46 @@
             panel1.Controls.Add(lnkPedido);
             panel1.Controls.Add(lnkInicio);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(0, -1);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(212, 683);
             panel1.TabIndex = 12;
             // 
-            // label4
+            // label7
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(8, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(140, 21);
-            label4.TabIndex = 0;
-            label4.Text = "nombre_empleado";
+            label7.AutoSize = true;
+            label7.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(0, 2);
+            label7.Name = "label7";
+            label7.Size = new Size(84, 21);
+            label7.TabIndex = 18;
+            label7.Text = "Empleado:";
+            // 
+            // lblEmpleado
+            // 
+            lblEmpleado.AutoSize = true;
+            lblEmpleado.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmpleado.ForeColor = Color.White;
+            lblEmpleado.Location = new Point(0, 25);
+            lblEmpleado.Name = "lblEmpleado";
+            lblEmpleado.Size = new Size(140, 21);
+            lblEmpleado.TabIndex = 17;
+            lblEmpleado.Text = "nombre_empleado";
+            // 
+            // lnkIngrediente
+            // 
+            lnkIngrediente.ActiveLinkColor = Color.Black;
+            lnkIngrediente.AutoSize = true;
+            lnkIngrediente.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lnkIngrediente.LinkColor = Color.White;
+            lnkIngrediente.Location = new Point(13, 446);
+            lnkIngrediente.Name = "lnkIngrediente";
+            lnkIngrediente.Size = new Size(114, 26);
+            lnkIngrediente.TabIndex = 16;
+            lnkIngrediente.TabStop = true;
+            lnkIngrediente.Text = "Ingrediente";
+            lnkIngrediente.LinkClicked += lnkIngrediente_LinkClicked;
             // 
             // lnkProveedor
             // 
@@ -212,35 +254,124 @@
             label2.TabIndex = 5;
             label2.Text = "Gestion del apartado de categoria.";
             // 
-            // tabControl1
+            // gpxCategoriaAgregar
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(215, 83);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(970, 599);
-            tabControl1.TabIndex = 14;
+            gpxCategoriaAgregar.Controls.Add(btnCategoriaCancelar);
+            gpxCategoriaAgregar.Controls.Add(txtCategoriaDescripcion);
+            gpxCategoriaAgregar.Controls.Add(btnCategoriaAgregar);
+            gpxCategoriaAgregar.Controls.Add(txtCategoriaNombre);
+            gpxCategoriaAgregar.Controls.Add(label5);
+            gpxCategoriaAgregar.Controls.Add(label4);
+            gpxCategoriaAgregar.Location = new Point(215, 86);
+            gpxCategoriaAgregar.Name = "gpxCategoriaAgregar";
+            gpxCategoriaAgregar.Size = new Size(970, 172);
+            gpxCategoriaAgregar.TabIndex = 14;
+            gpxCategoriaAgregar.TabStop = false;
+            gpxCategoriaAgregar.Text = "Agregar categoria";
             // 
-            // tabPage1
+            // label4
             // 
-            tabPage1.Location = new Point(4, 30);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(962, 565);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Agregar";
-            tabPage1.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Location = new Point(37, 38);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 21);
+            label4.TabIndex = 15;
+            label4.Text = "Nombre:";
             // 
-            // tabPage2
+            // label5
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(962, 571);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Consultar";
-            tabPage2.UseVisualStyleBackColor = true;
+            label5.AutoSize = true;
+            label5.Location = new Point(13, 72);
+            label5.Name = "label5";
+            label5.Size = new Size(92, 21);
+            label5.TabIndex = 16;
+            label5.Text = "Descripcion:";
+            // 
+            // txtCategoriaNombre
+            // 
+            txtCategoriaNombre.Location = new Point(111, 35);
+            txtCategoriaNombre.Name = "txtCategoriaNombre";
+            txtCategoriaNombre.Size = new Size(846, 26);
+            txtCategoriaNombre.TabIndex = 17;
+            // 
+            // txtCategoriaDescripcion
+            // 
+            txtCategoriaDescripcion.Location = new Point(111, 72);
+            txtCategoriaDescripcion.Name = "txtCategoriaDescripcion";
+            txtCategoriaDescripcion.Size = new Size(846, 26);
+            txtCategoriaDescripcion.TabIndex = 18;
+            // 
+            // btnCategoriaCancelar
+            // 
+            btnCategoriaCancelar.Cursor = Cursors.Hand;
+            btnCategoriaCancelar.Location = new Point(14, 125);
+            btnCategoriaCancelar.Name = "btnCategoriaCancelar";
+            btnCategoriaCancelar.Size = new Size(134, 34);
+            btnCategoriaCancelar.TabIndex = 28;
+            btnCategoriaCancelar.Text = "Cancelar";
+            btnCategoriaCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnCategoriaAgregar
+            // 
+            btnCategoriaAgregar.Cursor = Cursors.Hand;
+            btnCategoriaAgregar.Location = new Point(809, 125);
+            btnCategoriaAgregar.Name = "btnCategoriaAgregar";
+            btnCategoriaAgregar.Size = new Size(148, 34);
+            btnCategoriaAgregar.TabIndex = 27;
+            btnCategoriaAgregar.Text = "Agregar categoria";
+            btnCategoriaAgregar.UseVisualStyleBackColor = true;
+            // 
+            // gpxCategoriaConsulta
+            // 
+            gpxCategoriaConsulta.Controls.Add(btnClienteEliminar);
+            gpxCategoriaConsulta.Controls.Add(btnClienteModificar);
+            gpxCategoriaConsulta.Controls.Add(dgvCategoriaConsultar);
+            gpxCategoriaConsulta.Location = new Point(215, 264);
+            gpxCategoriaConsulta.Name = "gpxCategoriaConsulta";
+            gpxCategoriaConsulta.Size = new Size(970, 419);
+            gpxCategoriaConsulta.TabIndex = 15;
+            gpxCategoriaConsulta.TabStop = false;
+            gpxCategoriaConsulta.Text = "Consulta de categorias";
+            // 
+            // dgvCategoriaConsultar
+            // 
+            dgvCategoriaConsultar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategoriaConsultar.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion });
+            dgvCategoriaConsultar.Location = new Point(6, 25);
+            dgvCategoriaConsultar.Name = "dgvCategoriaConsultar";
+            dgvCategoriaConsultar.RowTemplate.Height = 25;
+            dgvCategoriaConsultar.Size = new Size(780, 388);
+            dgvCategoriaConsultar.TabIndex = 0;
+            // 
+            // btnClienteEliminar
+            // 
+            btnClienteEliminar.Cursor = Cursors.Hand;
+            btnClienteEliminar.Location = new Point(792, 68);
+            btnClienteEliminar.Name = "btnClienteEliminar";
+            btnClienteEliminar.Size = new Size(165, 40);
+            btnClienteEliminar.TabIndex = 19;
+            btnClienteEliminar.Text = "Eliminar";
+            btnClienteEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnClienteModificar
+            // 
+            btnClienteModificar.Cursor = Cursors.Hand;
+            btnClienteModificar.Location = new Point(792, 23);
+            btnClienteModificar.Name = "btnClienteModificar";
+            btnClienteModificar.Size = new Size(165, 40);
+            btnClienteModificar.TabIndex = 18;
+            btnClienteModificar.Text = "Modificar";
+            btnClienteModificar.UseVisualStyleBackColor = true;
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Descripcion
+            // 
+            Descripcion.HeaderText = "Descripcion";
+            Descripcion.Name = "Descripcion";
             // 
             // category
             // 
@@ -248,10 +379,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 681);
             ControlBox = false;
+            Controls.Add(gpxCategoriaConsulta);
+            Controls.Add(gpxCategoriaAgregar);
             Controls.Add(panel1);
             Controls.Add(panel3);
-            Controls.Add(tabControl1);
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "category";
             Text = "Espresso Esencial - Categoria";
@@ -261,7 +394,10 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            tabControl1.ResumeLayout(false);
+            gpxCategoriaAgregar.ResumeLayout(false);
+            gpxCategoriaAgregar.PerformLayout();
+            gpxCategoriaConsulta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvCategoriaConsultar).EndInit();
             ResumeLayout(false);
         }
 
@@ -269,7 +405,6 @@
 
         private Label label1;
         private Panel panel1;
-        private Label label4;
         private LinkLabel lnkProveedor;
         private LinkLabel lnkEmpleado;
         private LinkLabel lnkProducto;
@@ -280,8 +415,21 @@
         private Label label3;
         private Panel panel3;
         private Label label2;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private LinkLabel lnkIngrediente;
+        private Label label7;
+        private Label lblEmpleado;
+        private GroupBox gpxCategoriaAgregar;
+        private TextBox txtCategoriaDescripcion;
+        private TextBox txtCategoriaNombre;
+        private Label label5;
+        private Label label4;
+        private Button btnCategoriaCancelar;
+        private Button btnCategoriaAgregar;
+        private GroupBox gpxCategoriaConsulta;
+        private DataGridView dgvCategoriaConsultar;
+        private Button btnClienteEliminar;
+        private Button btnClienteModificar;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Descripcion;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             label1 = new Label();
             label2 = new Label();
             btnProducto = new Button();
@@ -38,6 +39,7 @@
             btnPedido = new Button();
             panel1 = new Panel();
             btnCliente = new Button();
+            btnIngrediente = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -183,6 +185,22 @@
             btnCliente.UseVisualStyleBackColor = false;
             btnCliente.Click += btnCliente_Click_1;
             // 
+            // btnIngrediente
+            // 
+            btnIngrediente.BackColor = Color.White;
+            btnIngrediente.BackgroundImage = Properties.Resources.ingrediente;
+            btnIngrediente.BackgroundImageLayout = ImageLayout.Stretch;
+            btnIngrediente.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnIngrediente.ForeColor = Color.Black;
+            btnIngrediente.Location = new Point(615, 374);
+            btnIngrediente.Name = "btnIngrediente";
+            btnIngrediente.Size = new Size(250, 250);
+            btnIngrediente.TabIndex = 13;
+            btnIngrediente.Text = "Ingrediente";
+            btnIngrediente.TextAlign = ContentAlignment.BottomCenter;
+            btnIngrediente.UseVisualStyleBackColor = false;
+            btnIngrediente.Click += btnIngrediente_Click;
+            // 
             // main
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -190,6 +208,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1184, 681);
             ControlBox = false;
+            Controls.Add(btnIngrediente);
             Controls.Add(btnCliente);
             Controls.Add(panel1);
             Controls.Add(btnPedido);
@@ -200,6 +219,7 @@
             Cursor = Cursors.Hand;
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.DarkBlue;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "main";
             Text = "Espresso Esencial - Principal";
@@ -220,5 +240,6 @@
         private Button btnPedido;
         private Panel panel1;
         private Button btnCliente;
+        private Button btnIngrediente;
     }
 }

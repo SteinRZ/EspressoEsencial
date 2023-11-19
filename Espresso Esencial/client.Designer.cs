@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(client));
             label1 = new Label();
             panel1 = new Panel();
-            label4 = new Label();
+            label7 = new Label();
+            lblEmpleado = new Label();
             lnkProveedor = new LinkLabel();
             lnkCategoria = new LinkLabel();
             lnkEmpleado = new LinkLabel();
@@ -43,11 +45,41 @@
             label2 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnClienteCancelar = new Button();
+            btnClienteAgregar = new Button();
+            cbxClienteEstudiante = new ComboBox();
+            txtClienteCorreo = new TextBox();
+            txtClienteTelefono = new TextBox();
+            txtClienteNombre = new TextBox();
+            txtClienteApellidoMaterno = new TextBox();
+            txtClienteApellidoPaterno = new TextBox();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label8 = new Label();
             tabPage2 = new TabPage();
+            btnClienteEliminar = new Button();
+            btnClienteModificar = new Button();
+            dgvConsultaCliente = new DataGridView();
+            ApellidoPaterno = new DataGridViewTextBoxColumn();
+            ApellidoMaterno = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            CorreoElectronico = new DataGridViewTextBoxColumn();
+            Punto = new DataGridViewTextBoxColumn();
+            Estudiante = new DataGridViewTextBoxColumn();
+            label4 = new Label();
+            btnClienteConsultaHistorial = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvConsultaCliente).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -64,7 +96,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 64);
-            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(lblEmpleado);
             panel1.Controls.Add(lnkProveedor);
             panel1.Controls.Add(lnkCategoria);
             panel1.Controls.Add(lnkEmpleado);
@@ -72,21 +105,32 @@
             panel1.Controls.Add(lnkPedido);
             panel1.Controls.Add(lnkInicio);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(0, -1);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(212, 683);
             panel1.TabIndex = 9;
             // 
-            // label4
+            // label7
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(8, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(140, 21);
-            label4.TabIndex = 0;
-            label4.Text = "nombre_empleado";
+            label7.AutoSize = true;
+            label7.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(0, 2);
+            label7.Name = "label7";
+            label7.Size = new Size(84, 21);
+            label7.TabIndex = 9;
+            label7.Text = "Empleado:";
+            // 
+            // lblEmpleado
+            // 
+            lblEmpleado.AutoSize = true;
+            lblEmpleado.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmpleado.ForeColor = Color.White;
+            lblEmpleado.Location = new Point(0, 25);
+            lblEmpleado.Name = "lblEmpleado";
+            lblEmpleado.Size = new Size(140, 21);
+            lblEmpleado.TabIndex = 8;
+            lblEmpleado.Text = "nombre_empleado";
             // 
             // lnkProveedor
             // 
@@ -224,6 +268,21 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnClienteCancelar);
+            tabPage1.Controls.Add(btnClienteAgregar);
+            tabPage1.Controls.Add(cbxClienteEstudiante);
+            tabPage1.Controls.Add(txtClienteCorreo);
+            tabPage1.Controls.Add(txtClienteTelefono);
+            tabPage1.Controls.Add(txtClienteNombre);
+            tabPage1.Controls.Add(txtClienteApellidoMaterno);
+            tabPage1.Controls.Add(txtClienteApellidoPaterno);
+            tabPage1.Controls.Add(label12);
+            tabPage1.Controls.Add(label11);
+            tabPage1.Controls.Add(label10);
+            tabPage1.Controls.Add(label9);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(label5);
+            tabPage1.Controls.Add(label8);
             tabPage1.Location = new Point(4, 30);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -232,15 +291,235 @@
             tabPage1.Text = "Agregar";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnClienteCancelar
+            // 
+            btnClienteCancelar.Cursor = Cursors.Hand;
+            btnClienteCancelar.Location = new Point(10, 522);
+            btnClienteCancelar.Name = "btnClienteCancelar";
+            btnClienteCancelar.Size = new Size(134, 34);
+            btnClienteCancelar.TabIndex = 26;
+            btnClienteCancelar.Text = "Cancelar";
+            btnClienteCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnClienteAgregar
+            // 
+            btnClienteAgregar.Cursor = Cursors.Hand;
+            btnClienteAgregar.Location = new Point(819, 522);
+            btnClienteAgregar.Name = "btnClienteAgregar";
+            btnClienteAgregar.Size = new Size(134, 34);
+            btnClienteAgregar.TabIndex = 25;
+            btnClienteAgregar.Text = "Agregar cliente";
+            btnClienteAgregar.UseVisualStyleBackColor = true;
+            // 
+            // cbxClienteEstudiante
+            // 
+            cbxClienteEstudiante.DisplayMember = "SI";
+            cbxClienteEstudiante.FormattingEnabled = true;
+            cbxClienteEstudiante.Items.AddRange(new object[] { "Si", "No" });
+            cbxClienteEstudiante.Location = new Point(503, 300);
+            cbxClienteEstudiante.Name = "cbxClienteEstudiante";
+            cbxClienteEstudiante.Size = new Size(119, 29);
+            cbxClienteEstudiante.TabIndex = 24;
+            cbxClienteEstudiante.Text = "Si/No";
+            // 
+            // txtClienteCorreo
+            // 
+            txtClienteCorreo.Location = new Point(10, 300);
+            txtClienteCorreo.Name = "txtClienteCorreo";
+            txtClienteCorreo.Size = new Size(449, 26);
+            txtClienteCorreo.TabIndex = 23;
+            // 
+            // txtClienteTelefono
+            // 
+            txtClienteTelefono.Location = new Point(503, 209);
+            txtClienteTelefono.Name = "txtClienteTelefono";
+            txtClienteTelefono.Size = new Size(450, 26);
+            txtClienteTelefono.TabIndex = 22;
+            // 
+            // txtClienteNombre
+            // 
+            txtClienteNombre.Location = new Point(10, 209);
+            txtClienteNombre.Name = "txtClienteNombre";
+            txtClienteNombre.Size = new Size(449, 26);
+            txtClienteNombre.TabIndex = 21;
+            // 
+            // txtClienteApellidoMaterno
+            // 
+            txtClienteApellidoMaterno.Location = new Point(503, 123);
+            txtClienteApellidoMaterno.Name = "txtClienteApellidoMaterno";
+            txtClienteApellidoMaterno.Size = new Size(450, 26);
+            txtClienteApellidoMaterno.TabIndex = 20;
+            // 
+            // txtClienteApellidoPaterno
+            // 
+            txtClienteApellidoPaterno.Location = new Point(9, 123);
+            txtClienteApellidoPaterno.Name = "txtClienteApellidoPaterno";
+            txtClienteApellidoPaterno.Size = new Size(450, 26);
+            txtClienteApellidoPaterno.TabIndex = 19;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(503, 276);
+            label12.Name = "label12";
+            label12.Size = new Size(119, 21);
+            label12.TabIndex = 18;
+            label12.Text = "¿Es estudiante?";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(10, 276);
+            label11.Name = "label11";
+            label11.Size = new Size(134, 21);
+            label11.TabIndex = 17;
+            label11.Text = "Correo electronico:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(503, 185);
+            label10.Name = "label10";
+            label10.Size = new Size(72, 21);
+            label10.TabIndex = 16;
+            label10.Text = "Telefono:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(10, 185);
+            label9.Name = "label9";
+            label9.Size = new Size(85, 21);
+            label9.TabIndex = 15;
+            label9.Text = "Nombre(s):";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(503, 99);
+            label6.Name = "label6";
+            label6.Size = new Size(132, 21);
+            label6.TabIndex = 14;
+            label6.Text = "Apellido materno:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(9, 99);
+            label5.Name = "label5";
+            label5.Size = new Size(127, 21);
+            label5.TabIndex = 13;
+            label5.Text = "Apellido paterno:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(9, 7);
+            label8.Name = "label8";
+            label8.Size = new Size(148, 26);
+            label8.TabIndex = 12;
+            label8.Text = "Agregar cliente";
+            // 
             // tabPage2
             // 
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Controls.Add(btnClienteConsultaHistorial);
+            tabPage2.Controls.Add(btnClienteEliminar);
+            tabPage2.Controls.Add(btnClienteModificar);
+            tabPage2.Controls.Add(dgvConsultaCliente);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Location = new Point(4, 30);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(962, 571);
+            tabPage2.Size = new Size(962, 565);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Consultar";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnClienteEliminar
+            // 
+            btnClienteEliminar.Cursor = Cursors.Hand;
+            btnClienteEliminar.Location = new Point(786, 134);
+            btnClienteEliminar.Name = "btnClienteEliminar";
+            btnClienteEliminar.Size = new Size(165, 40);
+            btnClienteEliminar.TabIndex = 17;
+            btnClienteEliminar.Text = "Eliminar";
+            btnClienteEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnClienteModificar
+            // 
+            btnClienteModificar.Cursor = Cursors.Hand;
+            btnClienteModificar.Location = new Point(786, 88);
+            btnClienteModificar.Name = "btnClienteModificar";
+            btnClienteModificar.Size = new Size(165, 40);
+            btnClienteModificar.TabIndex = 15;
+            btnClienteModificar.Text = "Modificar";
+            btnClienteModificar.UseVisualStyleBackColor = true;
+            // 
+            // dgvConsultaCliente
+            // 
+            dgvConsultaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvConsultaCliente.Columns.AddRange(new DataGridViewColumn[] { ApellidoPaterno, ApellidoMaterno, Nombre, Telefono, CorreoElectronico, Punto, Estudiante });
+            dgvConsultaCliente.Location = new Point(6, 42);
+            dgvConsultaCliente.Name = "dgvConsultaCliente";
+            dgvConsultaCliente.RowTemplate.Height = 25;
+            dgvConsultaCliente.Size = new Size(774, 520);
+            dgvConsultaCliente.TabIndex = 14;
+            // 
+            // ApellidoPaterno
+            // 
+            ApellidoPaterno.HeaderText = "Apellido paterno";
+            ApellidoPaterno.Name = "ApellidoPaterno";
+            // 
+            // ApellidoMaterno
+            // 
+            ApellidoMaterno.HeaderText = "Apellido materno";
+            ApellidoMaterno.Name = "ApellidoMaterno";
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre(s)";
+            Nombre.Name = "Nombre";
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
+            // 
+            // CorreoElectronico
+            // 
+            CorreoElectronico.HeaderText = "Correo electronico";
+            CorreoElectronico.Name = "CorreoElectronico";
+            // 
+            // Punto
+            // 
+            Punto.HeaderText = "Puntos";
+            Punto.Name = "Punto";
+            // 
+            // Estudiante
+            // 
+            Estudiante.HeaderText = "Estudiante";
+            Estudiante.Name = "Estudiante";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(9, 7);
+            label4.Name = "label4";
+            label4.Size = new Size(190, 26);
+            label4.TabIndex = 13;
+            label4.Text = "Clientes registrados";
+            // 
+            // btnClienteConsultaHistorial
+            // 
+            btnClienteConsultaHistorial.Cursor = Cursors.Hand;
+            btnClienteConsultaHistorial.Location = new Point(786, 42);
+            btnClienteConsultaHistorial.Name = "btnClienteConsultaHistorial";
+            btnClienteConsultaHistorial.Size = new Size(165, 40);
+            btnClienteConsultaHistorial.TabIndex = 18;
+            btnClienteConsultaHistorial.Text = "Consultar historial";
+            btnClienteConsultaHistorial.UseVisualStyleBackColor = true;
             // 
             // client
             // 
@@ -252,6 +531,7 @@
             Controls.Add(panel3);
             Controls.Add(tabControl1);
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "client";
             Text = "Espresso Esencial - Cliente";
@@ -263,6 +543,11 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvConsultaCliente).EndInit();
             ResumeLayout(false);
         }
 
@@ -270,7 +555,6 @@
 
         private Label label1;
         private Panel panel1;
-        private Label label4;
         private LinkLabel lnkProveedor;
         private LinkLabel lnkCategoria;
         private LinkLabel lnkEmpleado;
@@ -284,5 +568,34 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private Label label7;
+        private Label lblEmpleado;
+        private Label label8;
+        private Label label4;
+        private Label label5;
+        private Label label9;
+        private Label label6;
+        private TextBox txtClienteApellidoPaterno;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private ComboBox cbxClienteEstudiante;
+        private TextBox txtClienteCorreo;
+        private TextBox txtClienteTelefono;
+        private TextBox txtClienteNombre;
+        private TextBox txtClienteApellidoMaterno;
+        private Button btnClienteCancelar;
+        private Button btnClienteAgregar;
+        private DataGridView dgvConsultaCliente;
+        private Button btnClienteEliminar;
+        private Button btnClienteModificar;
+        private DataGridViewTextBoxColumn ApellidoPaterno;
+        private DataGridViewTextBoxColumn ApellidoMaterno;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn CorreoElectronico;
+        private DataGridViewTextBoxColumn Punto;
+        private DataGridViewTextBoxColumn Estudiante;
+        private Button btnClienteConsultaHistorial;
     }
 }

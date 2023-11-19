@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             btnCerrar = new Button();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
@@ -57,7 +58,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.logo;
+            pictureBox1.BackgroundImage = Properties.Resources.logo1;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(-2, 0);
             pictureBox1.Name = "pictureBox1";
@@ -163,6 +164,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "login";
             Text = "Espresso Esencial - Inicio de sesion";

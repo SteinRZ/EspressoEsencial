@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Espresso_Esencial
 {
-    public partial class product : Form
+    public partial class ingredient : Form
     {
-        public product()
+        public ingredient()
         {
             InitializeComponent();
+        }
+
+        private void lnkProveedor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            supplier supplier = new supplier();
+            supplier.Show();
+            this.Close();
         }
 
         private void lnkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -38,6 +45,13 @@ namespace Espresso_Esencial
             this.Close();
         }
 
+        private void lnkProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            product product = new product();
+            product.Show();
+            this.Close();
+        }
+
         private void lnkEmpleado_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             employee employee = new employee();
@@ -52,18 +66,9 @@ namespace Espresso_Esencial
             this.Close();
         }
 
-        private void lnkProveedor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            supplier supplier = new supplier();
-            supplier.Show();
-            this.Close();
-        }
 
-        private void lnkIngrediente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ingredient ingredient = new ingredient();
-            ingredient.Show();
-            this.Close();
         }
     }
 }
