@@ -84,6 +84,8 @@
             NumeroCalle = new DataGridViewTextBoxColumn();
             Colonia = new DataGridViewTextBoxColumn();
             label4 = new Label();
+            label17 = new Label();
+            txtEmpleadoContraseña = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -295,6 +297,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(txtEmpleadoContraseña);
+            tabPage1.Controls.Add(label17);
             tabPage1.Controls.Add(gpxDireccion);
             tabPage1.Controls.Add(label13);
             tabPage1.Controls.Add(txtEmpleadoRFC);
@@ -329,7 +333,7 @@
             gpxDireccion.Controls.Add(label15);
             gpxDireccion.Controls.Add(txtEmpleadoCalle);
             gpxDireccion.Controls.Add(label14);
-            gpxDireccion.Location = new Point(10, 339);
+            gpxDireccion.Location = new Point(9, 333);
             gpxDireccion.Name = "gpxDireccion";
             gpxDireccion.Size = new Size(943, 101);
             gpxDireccion.TabIndex = 43;
@@ -387,7 +391,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(503, 262);
+            label13.Location = new Point(10, 262);
             label13.Name = "label13";
             label13.Size = new Size(41, 21);
             label13.TabIndex = 42;
@@ -395,7 +399,7 @@
             // 
             // txtEmpleadoRFC
             // 
-            txtEmpleadoRFC.Location = new Point(503, 286);
+            txtEmpleadoRFC.Location = new Point(10, 286);
             txtEmpleadoRFC.Name = "txtEmpleadoRFC";
             txtEmpleadoRFC.Size = new Size(450, 26);
             txtEmpleadoRFC.TabIndex = 41;
@@ -424,29 +428,29 @@
             // 
             cbxEmpleadoRol.DisplayMember = "SI";
             cbxEmpleadoRol.FormattingEnabled = true;
-            cbxEmpleadoRol.Location = new Point(803, 455);
+            cbxEmpleadoRol.Location = new Point(503, 283);
             cbxEmpleadoRol.Name = "cbxEmpleadoRol";
-            cbxEmpleadoRol.Size = new Size(150, 29);
+            cbxEmpleadoRol.Size = new Size(449, 29);
             cbxEmpleadoRol.TabIndex = 38;
             cbxEmpleadoRol.Text = "Rol del empleado";
             // 
             // txtEmpleadoCorreo
             // 
-            txtEmpleadoCorreo.Location = new Point(10, 286);
+            txtEmpleadoCorreo.Location = new Point(9, 226);
             txtEmpleadoCorreo.Name = "txtEmpleadoCorreo";
             txtEmpleadoCorreo.Size = new Size(449, 26);
             txtEmpleadoCorreo.TabIndex = 37;
             // 
             // txtEmpleadoTelefono
             // 
-            txtEmpleadoTelefono.Location = new Point(503, 195);
+            txtEmpleadoTelefono.Location = new Point(503, 166);
             txtEmpleadoTelefono.Name = "txtEmpleadoTelefono";
             txtEmpleadoTelefono.Size = new Size(450, 26);
             txtEmpleadoTelefono.TabIndex = 36;
             // 
             // txtEmpleadoNombre
             // 
-            txtEmpleadoNombre.Location = new Point(10, 195);
+            txtEmpleadoNombre.Location = new Point(9, 166);
             txtEmpleadoNombre.Name = "txtEmpleadoNombre";
             txtEmpleadoNombre.Size = new Size(449, 26);
             txtEmpleadoNombre.TabIndex = 35;
@@ -468,16 +472,16 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(765, 458);
+            label12.Location = new Point(503, 262);
             label12.Name = "label12";
-            label12.Size = new Size(32, 21);
+            label12.Size = new Size(36, 21);
             label12.TabIndex = 32;
-            label12.Text = "Rol";
+            label12.Text = "Rol:";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(10, 262);
+            label11.Location = new Point(9, 202);
             label11.Name = "label11";
             label11.Size = new Size(134, 21);
             label11.TabIndex = 31;
@@ -486,7 +490,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(503, 171);
+            label10.Location = new Point(503, 142);
             label10.Name = "label10";
             label10.Size = new Size(72, 21);
             label10.TabIndex = 30;
@@ -495,7 +499,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(10, 171);
+            label9.Location = new Point(9, 142);
             label9.Name = "label9";
             label9.Size = new Size(85, 21);
             label9.TabIndex = 29;
@@ -535,10 +539,10 @@
             tabPage2.Controls.Add(btnEmpleadoModificar);
             tabPage2.Controls.Add(dgvConsultaCliente);
             tabPage2.Controls.Add(label4);
-            tabPage2.Location = new Point(4, 30);
+            tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(962, 565);
+            tabPage2.Size = new Size(962, 571);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Consultar";
             tabPage2.UseVisualStyleBackColor = true;
@@ -629,6 +633,22 @@
             label4.TabIndex = 14;
             label4.Text = "Empleados registrados";
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(503, 202);
+            label17.Name = "label17";
+            label17.Size = new Size(92, 21);
+            label17.TabIndex = 44;
+            label17.Text = "Contraseña:";
+            // 
+            // txtEmpleadoContraseña
+            // 
+            txtEmpleadoContraseña.Location = new Point(503, 226);
+            txtEmpleadoContraseña.Name = "txtEmpleadoContraseña";
+            txtEmpleadoContraseña.Size = new Size(449, 26);
+            txtEmpleadoContraseña.TabIndex = 45;
+            // 
             // employee
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -718,5 +738,7 @@
         private DataGridViewTextBoxColumn Calle;
         private DataGridViewTextBoxColumn NumeroCalle;
         private DataGridViewTextBoxColumn Colonia;
+        private TextBox txtEmpleadoContraseña;
+        private Label label17;
     }
 }
