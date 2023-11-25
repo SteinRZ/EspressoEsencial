@@ -34,11 +34,12 @@
             panel1 = new Panel();
             txtContraseña = new TextBox();
             label4 = new Label();
-            txtCorreoElectronico = new TextBox();
+            txtUsername = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             btnEntrar = new Button();
+            lblError = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -69,10 +70,11 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(64, 64, 64);
+            panel1.Controls.Add(lblError);
             panel1.Controls.Add(txtContraseña);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(btnCerrar);
-            panel1.Controls.Add(txtCorreoElectronico);
+            panel1.Controls.Add(txtUsername);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -97,17 +99,17 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(30, 335);
             label4.Name = "label4";
-            label4.Size = new Size(119, 26);
+            label4.Size = new Size(114, 26);
             label4.TabIndex = 5;
-            label4.Text = "Contraseña:";
+            label4.Text = "Contraseña";
             // 
-            // txtCorreoElectronico
+            // txtUsername
             // 
-            txtCorreoElectronico.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCorreoElectronico.Location = new Point(30, 290);
-            txtCorreoElectronico.Name = "txtCorreoElectronico";
-            txtCorreoElectronico.Size = new Size(407, 31);
-            txtCorreoElectronico.TabIndex = 4;
+            txtUsername.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsername.Location = new Point(30, 290);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(407, 31);
+            txtUsername.TabIndex = 4;
             // 
             // label3
             // 
@@ -116,9 +118,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(30, 265);
             label3.Name = "label3";
-            label3.Size = new Size(180, 26);
+            label3.Size = new Size(182, 26);
             label3.TabIndex = 3;
-            label3.Text = "Correo electronico:";
+            label3.Text = "Nombre de usuario";
             // 
             // label2
             // 
@@ -154,6 +156,17 @@
             btnEntrar.UseVisualStyleBackColor = false;
             btnEntrar.Click += btnEntrar_Click;
             // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.Font = new Font("Courier New", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblError.ForeColor = Color.Coral;
+            lblError.Location = new Point(30, 394);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(58, 18);
+            lblError.TabIndex = 7;
+            lblError.Text = "ERROR";
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -182,9 +195,10 @@
         private Button btnEntrar;
         private TextBox txtContraseña;
         private Label label4;
-        private TextBox txtCorreoElectronico;
+        private TextBox txtUsername;
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label lblError;
     }
 }

@@ -36,6 +36,15 @@ namespace Espresso_Esencial
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SystemUtils.Connection.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            SystemUtils.Username = null;
             login login = new login();
             login.Show();
             this.Close();

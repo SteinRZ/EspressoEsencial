@@ -15,6 +15,19 @@ namespace Espresso_Esencial
         public supplier()
         {
             InitializeComponent();
+            using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Proveedor"))
+            {
+                if (data != null)
+                {
+                    while (data.Read())
+                    {
+                        dgvProveedorConsultar.Rows.Add(
+                            data["Nombre"],
+                            data["Telefono"]
+                            );
+                    }
+                }
+            }
         }
 
         private void lnkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

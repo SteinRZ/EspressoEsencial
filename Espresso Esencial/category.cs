@@ -15,6 +15,19 @@ namespace Espresso_Esencial
         public category()
         {
             InitializeComponent();
+            using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Categoria"))
+            {
+                if (data != null)
+                {
+                    while (data.Read())
+                    {
+                        dgvCategoriaConsultar.Rows.Add(
+                            data["Nombre"],
+                            data["Descripcion"]
+                            );
+                    }
+                }
+            }
         }
 
         private void lnkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

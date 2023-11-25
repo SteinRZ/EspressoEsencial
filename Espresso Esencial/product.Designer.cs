@@ -67,9 +67,7 @@
             txtNombreProducto = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            dataGridView1 = new DataGridView();
-            Ingrediente = new DataGridViewTextBoxColumn();
-            CantidadNecesaria = new DataGridViewTextBoxColumn();
+            dgvIngredientes = new DataGridView();
             tabPage2 = new TabPage();
             label14 = new Label();
             dgvConsultaProducto = new DataGridView();
@@ -86,7 +84,7 @@
             panel3.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvIngredientes).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvConsultaProducto).BeginInit();
             SuspendLayout();
@@ -289,6 +287,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(970, 599);
             tabControl1.TabIndex = 14;
+            tabControl1.Selecting += tabControl1_Selecting;
             // 
             // tabPage1
             // 
@@ -313,7 +312,7 @@
             tabPage1.Controls.Add(txtNombreProducto);
             tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(dataGridView1);
+            tabPage1.Controls.Add(dgvIngredientes);
             tabPage1.Location = new Point(4, 30);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -351,6 +350,7 @@
             btnProductoAgregar.TabIndex = 19;
             btnProductoAgregar.Text = "Agregar producto";
             btnProductoAgregar.UseVisualStyleBackColor = true;
+            btnProductoAgregar.Click += btnProductoAgregar_Click;
             // 
             // cbxProductoCategoria
             // 
@@ -378,6 +378,7 @@
             btnProductoAgregaIngrediente.TabIndex = 16;
             btnProductoAgregaIngrediente.Text = "Agregar ingrediente";
             btnProductoAgregaIngrediente.UseVisualStyleBackColor = true;
+            btnProductoAgregaIngrediente.Click += btnProductoAgregaIngrediente_Click;
             // 
             // txtProductoCantidadNecesariaIngrediente
             // 
@@ -406,6 +407,7 @@
             // 
             // cbxProductoIngrediente
             // 
+            cbxProductoIngrediente.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxProductoIngrediente.FormattingEnabled = true;
             cbxProductoIngrediente.Location = new Point(9, 374);
             cbxProductoIngrediente.Name = "cbxProductoIngrediente";
@@ -501,25 +503,14 @@
             label5.TabIndex = 1;
             label5.Text = "Ingredientes:";
             // 
-            // dataGridView1
+            // dgvIngredientes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Ingrediente, CantidadNecesaria });
-            dataGridView1.Location = new Point(594, 68);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(359, 488);
-            dataGridView1.TabIndex = 0;
-            // 
-            // Ingrediente
-            // 
-            Ingrediente.HeaderText = "Ingrediente";
-            Ingrediente.Name = "Ingrediente";
-            // 
-            // CantidadNecesaria
-            // 
-            CantidadNecesaria.HeaderText = "Cant necesaria";
-            CantidadNecesaria.Name = "CantidadNecesaria";
+            dgvIngredientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvIngredientes.Location = new Point(594, 68);
+            dgvIngredientes.Name = "dgvIngredientes";
+            dgvIngredientes.RowTemplate.Height = 25;
+            dgvIngredientes.Size = new Size(359, 488);
+            dgvIngredientes.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -634,7 +625,7 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvIngredientes).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvConsultaProducto).EndInit();
@@ -659,7 +650,7 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private Label label5;
-        private DataGridView dataGridView1;
+        private DataGridView dgvIngredientes;
         private Label label7;
         private Label lblEmpleado;
         private TextBox txtNombreProducto;
@@ -690,8 +681,6 @@
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn CantidadActual;
         private DataGridViewTextBoxColumn CantidadMinima;
-        private DataGridViewTextBoxColumn Ingrediente;
-        private DataGridViewTextBoxColumn CantidadNecesaria;
         private LinkLabel lnkIngrediente;
         private Label label15;
         private Label label14;

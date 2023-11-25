@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Espresso_Esencial
 {
@@ -15,6 +17,7 @@ namespace Espresso_Esencial
         public client()
         {
             InitializeComponent();
+            lblEmpleado.Text = SystemUtils.Username;
         }
 
         private void client_Load(object sender, EventArgs e)
@@ -63,5 +66,54 @@ namespace Espresso_Esencial
             supplier.Show();
             this.Close();
         }
+
+        private void btnClienteAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlCommand insert = new SqlCommand("INSERT INTO Cliente(Apellido_Paterno, Apellido_Materno, Nombre, Telefono, Correo, Estudiante) VALUES(@aPaterno, @aMaterno, @nombre, @tel, @email, @estudiante)"))
+                {
+                    insert.Connection = SystemUtils.Connection;
+                    insert.Parameters.Add("@aPaterno", SqlDbType.VarChar, 30).Value = txtClienteApellidoPaterno.Text;
+                    insert.Parameters.Add("@aMaterno", SqlDbType.VarChar, 30).Value = txtClienteApellidoMaterno.Text;
+                    insert.Parameters.Add("@nombre", SqlDbType.VarChar, 30).Value = txtClienteNombre.Text;
+                    insert.Parameters.Add("@tel", SqlDbType.Char, 10).Value = txtClienteTelefono.Text;
+                    insert.Parameters.Add("@email", SqlDbType.VarChar, 30).Value = txtClienteCorreo.Text;
+                    insert.Parameters.Add("@estudiante", SqlDbType.Char, 3).Value = chkEstudiante.Checked ? "Si" : "No";
+                    insert.ExecuteNonQuery();
+                }
+                MessageBox.Show("Se insertó el cliente correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            TabPage current = (sender as TabControl).SelectedTab;
+            if (current.Text == "Consultar")
+            {
+                dgvConsultaCliente.Rows.Clear();
+                using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Cliente"))
+                {
+                    while (data.Read())
+                    {
+                        dgvConsultaCliente.Rows.Add(
+                            data["Apellido_Paterno"],
+                            data["Apellido_Materno"],
+                            data["Nombre"],
+                            data["Telefono"],
+                            data["Correo"],
+                            data["Puntos"],
+                            data["Estudiante"]
+                        );
+                    }
+                }
+            }
+        }
+
+
     }
 }

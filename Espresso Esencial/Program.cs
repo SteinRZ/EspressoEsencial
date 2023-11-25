@@ -1,3 +1,5 @@
+using System.Data.SqlClient;
+
 namespace Espresso_Esencial
 {
     internal static class Program

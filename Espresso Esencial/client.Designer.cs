@@ -45,15 +45,13 @@
             label2 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            btnClienteCancelar = new Button();
+            chkEstudiante = new CheckBox();
             btnClienteAgregar = new Button();
-            cbxClienteEstudiante = new ComboBox();
             txtClienteCorreo = new TextBox();
             txtClienteTelefono = new TextBox();
             txtClienteNombre = new TextBox();
             txtClienteApellidoMaterno = new TextBox();
             txtClienteApellidoPaterno = new TextBox();
-            label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
@@ -61,6 +59,7 @@
             label5 = new Label();
             label8 = new Label();
             tabPage2 = new TabPage();
+            btnClienteConsultaHistorial = new Button();
             btnClienteEliminar = new Button();
             btnClienteModificar = new Button();
             dgvConsultaCliente = new DataGridView();
@@ -72,7 +71,6 @@
             Punto = new DataGridViewTextBoxColumn();
             Estudiante = new DataGridViewTextBoxColumn();
             label4 = new Label();
-            btnClienteConsultaHistorial = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -265,18 +263,17 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(970, 599);
             tabControl1.TabIndex = 11;
+            tabControl1.Selecting += tabControl1_Selecting;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(btnClienteCancelar);
+            tabPage1.Controls.Add(chkEstudiante);
             tabPage1.Controls.Add(btnClienteAgregar);
-            tabPage1.Controls.Add(cbxClienteEstudiante);
             tabPage1.Controls.Add(txtClienteCorreo);
             tabPage1.Controls.Add(txtClienteTelefono);
             tabPage1.Controls.Add(txtClienteNombre);
             tabPage1.Controls.Add(txtClienteApellidoMaterno);
             tabPage1.Controls.Add(txtClienteApellidoPaterno);
-            tabPage1.Controls.Add(label12);
             tabPage1.Controls.Add(label11);
             tabPage1.Controls.Add(label10);
             tabPage1.Controls.Add(label9);
@@ -291,15 +288,15 @@
             tabPage1.Text = "Agregar";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnClienteCancelar
+            // chkEstudiante
             // 
-            btnClienteCancelar.Cursor = Cursors.Hand;
-            btnClienteCancelar.Location = new Point(10, 522);
-            btnClienteCancelar.Name = "btnClienteCancelar";
-            btnClienteCancelar.Size = new Size(134, 34);
-            btnClienteCancelar.TabIndex = 26;
-            btnClienteCancelar.Text = "Cancelar";
-            btnClienteCancelar.UseVisualStyleBackColor = true;
+            chkEstudiante.AutoSize = true;
+            chkEstudiante.Location = new Point(503, 301);
+            chkEstudiante.Name = "chkEstudiante";
+            chkEstudiante.Size = new Size(138, 25);
+            chkEstudiante.TabIndex = 27;
+            chkEstudiante.Text = "¿Es estudiante?";
+            chkEstudiante.UseVisualStyleBackColor = true;
             // 
             // btnClienteAgregar
             // 
@@ -310,17 +307,7 @@
             btnClienteAgregar.TabIndex = 25;
             btnClienteAgregar.Text = "Agregar cliente";
             btnClienteAgregar.UseVisualStyleBackColor = true;
-            // 
-            // cbxClienteEstudiante
-            // 
-            cbxClienteEstudiante.DisplayMember = "SI";
-            cbxClienteEstudiante.FormattingEnabled = true;
-            cbxClienteEstudiante.Items.AddRange(new object[] { "Si", "No" });
-            cbxClienteEstudiante.Location = new Point(503, 300);
-            cbxClienteEstudiante.Name = "cbxClienteEstudiante";
-            cbxClienteEstudiante.Size = new Size(119, 29);
-            cbxClienteEstudiante.TabIndex = 24;
-            cbxClienteEstudiante.Text = "Si/No";
+            btnClienteAgregar.Click += btnClienteAgregar_Click;
             // 
             // txtClienteCorreo
             // 
@@ -356,15 +343,6 @@
             txtClienteApellidoPaterno.Name = "txtClienteApellidoPaterno";
             txtClienteApellidoPaterno.Size = new Size(450, 26);
             txtClienteApellidoPaterno.TabIndex = 19;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(503, 276);
-            label12.Name = "label12";
-            label12.Size = new Size(119, 21);
-            label12.TabIndex = 18;
-            label12.Text = "¿Es estudiante?";
             // 
             // label11
             // 
@@ -435,6 +413,16 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Consultar";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnClienteConsultaHistorial
+            // 
+            btnClienteConsultaHistorial.Cursor = Cursors.Hand;
+            btnClienteConsultaHistorial.Location = new Point(786, 42);
+            btnClienteConsultaHistorial.Name = "btnClienteConsultaHistorial";
+            btnClienteConsultaHistorial.Size = new Size(165, 40);
+            btnClienteConsultaHistorial.TabIndex = 18;
+            btnClienteConsultaHistorial.Text = "Consultar historial";
+            btnClienteConsultaHistorial.UseVisualStyleBackColor = true;
             // 
             // btnClienteEliminar
             // 
@@ -511,16 +499,6 @@
             label4.TabIndex = 13;
             label4.Text = "Clientes registrados";
             // 
-            // btnClienteConsultaHistorial
-            // 
-            btnClienteConsultaHistorial.Cursor = Cursors.Hand;
-            btnClienteConsultaHistorial.Location = new Point(786, 42);
-            btnClienteConsultaHistorial.Name = "btnClienteConsultaHistorial";
-            btnClienteConsultaHistorial.Size = new Size(165, 40);
-            btnClienteConsultaHistorial.TabIndex = 18;
-            btnClienteConsultaHistorial.Text = "Consultar historial";
-            btnClienteConsultaHistorial.UseVisualStyleBackColor = true;
-            // 
             // client
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -576,15 +554,12 @@
         private Label label9;
         private Label label6;
         private TextBox txtClienteApellidoPaterno;
-        private Label label12;
         private Label label11;
         private Label label10;
-        private ComboBox cbxClienteEstudiante;
         private TextBox txtClienteCorreo;
         private TextBox txtClienteTelefono;
         private TextBox txtClienteNombre;
         private TextBox txtClienteApellidoMaterno;
-        private Button btnClienteCancelar;
         private Button btnClienteAgregar;
         private DataGridView dgvConsultaCliente;
         private Button btnClienteEliminar;
@@ -597,5 +572,6 @@
         private DataGridViewTextBoxColumn Punto;
         private DataGridViewTextBoxColumn Estudiante;
         private Button btnClienteConsultaHistorial;
+        private CheckBox chkEstudiante;
     }
 }

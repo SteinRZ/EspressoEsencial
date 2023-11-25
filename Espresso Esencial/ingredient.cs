@@ -15,6 +15,31 @@ namespace Espresso_Esencial
         public ingredient()
         {
             InitializeComponent();
+            using (IDataReader proveedorInfo = SystemUtils.MakeQuery("SELECT Nombre FROM Proveedor"))
+            {
+                if (proveedorInfo != null)
+                {
+                    while (proveedorInfo.Read())
+                    {
+                        cbxIngredienteProveedor.Items.Add(proveedorInfo["Nombre"]);
+                    }
+                }
+            }
+            using (IDataReader data = SystemUtils.MakeQuery("SELECT I.Nombre, P.Nombre as Proveedor, I.Cantidad_Actual, I.Cantidad_Minima, I.Caducidad FROM INGREDIENTE I LEFT JOIN PROVEEDOR P ON I.ID_PROVEEDOR = P.ID_PROVEEDOR"))
+            {
+                if (data != null)
+                {
+                    while (data.Read())
+                    {
+                        dgvConsultaCliente.Rows.Add(
+                            data["Nombre"],
+                            data["Proveedor"],
+                            data["Cantidad_Actual"],
+                            data["Cantidad_Minima"],
+                            data["Caducidad"]);
+                    }
+                }
+            }
         }
 
         private void lnkProveedor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

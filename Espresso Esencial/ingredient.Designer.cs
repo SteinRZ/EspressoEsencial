@@ -46,28 +46,27 @@
             label2 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            btnIngredienteCancelar = new Button();
-            btnIngredienteAgregar = new Button();
-            cbxIngredienteProveedor = new ComboBox();
-            label4 = new Label();
-            label15 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            txtIngredienteNombre = new TextBox();
-            txtIngredienteDescripcion = new TextBox();
-            label8 = new Label();
+            dtpIngredienteCaducidad = new DateTimePicker();
+            label11 = new Label();
             txtIngredienteCantidadMinima = new TextBox();
             label10 = new Label();
             txtIngredienteCantidadActual = new TextBox();
             label9 = new Label();
-            label11 = new Label();
-            dtpIngredienteCaducidad = new DateTimePicker();
+            label8 = new Label();
+            txtIngredienteDescripcion = new TextBox();
+            txtIngredienteNombre = new TextBox();
+            label6 = new Label();
+            label15 = new Label();
+            label4 = new Label();
+            cbxIngredienteProveedor = new ComboBox();
+            btnIngredienteCancelar = new Button();
+            btnIngredienteAgregar = new Button();
+            tabPage2 = new TabPage();
             btnIngredienteEliminar = new Button();
             btnIngredienteModificar = new Button();
             dgvConsultaCliente = new DataGridView();
+            label5 = new Label();
             Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
             Proveedor = new DataGridViewTextBoxColumn();
             CantidadActual = new DataGridViewTextBoxColumn();
             CantidadMinima = new DataGridViewTextBoxColumn();
@@ -306,109 +305,21 @@
             tabPage1.Text = "Agregar";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // dtpIngredienteCaducidad
             // 
-            tabPage2.Controls.Add(btnIngredienteEliminar);
-            tabPage2.Controls.Add(btnIngredienteModificar);
-            tabPage2.Controls.Add(dgvConsultaCliente);
-            tabPage2.Controls.Add(label5);
-            tabPage2.Location = new Point(4, 30);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(962, 565);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Consultar";
-            tabPage2.UseVisualStyleBackColor = true;
+            dtpIngredienteCaducidad.Location = new Point(463, 268);
+            dtpIngredienteCaducidad.Name = "dtpIngredienteCaducidad";
+            dtpIngredienteCaducidad.Size = new Size(306, 26);
+            dtpIngredienteCaducidad.TabIndex = 67;
             // 
-            // btnIngredienteCancelar
+            // label11
             // 
-            btnIngredienteCancelar.Cursor = Cursors.Hand;
-            btnIngredienteCancelar.Location = new Point(10, 522);
-            btnIngredienteCancelar.Name = "btnIngredienteCancelar";
-            btnIngredienteCancelar.Size = new Size(134, 34);
-            btnIngredienteCancelar.TabIndex = 54;
-            btnIngredienteCancelar.Text = "Cancelar";
-            btnIngredienteCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnIngredienteAgregar
-            // 
-            btnIngredienteAgregar.Cursor = Cursors.Hand;
-            btnIngredienteAgregar.Location = new Point(803, 522);
-            btnIngredienteAgregar.Name = "btnIngredienteAgregar";
-            btnIngredienteAgregar.Size = new Size(150, 34);
-            btnIngredienteAgregar.TabIndex = 53;
-            btnIngredienteAgregar.Text = "Agregar ingrediente";
-            btnIngredienteAgregar.UseVisualStyleBackColor = true;
-            // 
-            // cbxIngredienteProveedor
-            // 
-            cbxIngredienteProveedor.FormattingEnabled = true;
-            cbxIngredienteProveedor.Location = new Point(110, 121);
-            cbxIngredienteProveedor.Name = "cbxIngredienteProveedor";
-            cbxIngredienteProveedor.Size = new Size(843, 29);
-            cbxIngredienteProveedor.TabIndex = 55;
-            cbxIngredienteProveedor.Text = "Proveedor del ingrediente";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(22, 124);
-            label4.Name = "label4";
-            label4.Size = new Size(82, 21);
-            label4.TabIndex = 56;
-            label4.Text = "Proveedor:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(9, 7);
-            label15.Name = "label15";
-            label15.Size = new Size(189, 26);
-            label15.TabIndex = 57;
-            label15.Text = "Agregar ingrediente";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(9, 7);
-            label5.Name = "label5";
-            label5.Size = new Size(203, 26);
-            label5.TabIndex = 58;
-            label5.Text = "Consultar ingrediente";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(36, 173);
-            label6.Name = "label6";
-            label6.Size = new Size(68, 21);
-            label6.TabIndex = 58;
-            label6.Text = "Nombre:";
-            // 
-            // txtIngredienteNombre
-            // 
-            txtIngredienteNombre.Location = new Point(22, 197);
-            txtIngredienteNombre.Name = "txtIngredienteNombre";
-            txtIngredienteNombre.Size = new Size(342, 26);
-            txtIngredienteNombre.TabIndex = 59;
-            // 
-            // txtIngredienteDescripcion
-            // 
-            txtIngredienteDescripcion.Location = new Point(370, 197);
-            txtIngredienteDescripcion.Name = "txtIngredienteDescripcion";
-            txtIngredienteDescripcion.Size = new Size(583, 26);
-            txtIngredienteDescripcion.TabIndex = 60;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(385, 173);
-            label8.Name = "label8";
-            label8.Size = new Size(92, 21);
-            label8.TabIndex = 61;
-            label8.Text = "Descripcion:";
+            label11.AutoSize = true;
+            label11.Location = new Point(463, 244);
+            label11.Name = "label11";
+            label11.Size = new Size(88, 21);
+            label11.TabIndex = 66;
+            label11.Text = "Caducidad:";
             // 
             // txtIngredienteCantidadMinima
             // 
@@ -442,21 +353,99 @@
             label9.TabIndex = 62;
             label9.Text = "Cantidad actual:";
             // 
-            // label11
+            // label8
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(463, 244);
-            label11.Name = "label11";
-            label11.Size = new Size(88, 21);
-            label11.TabIndex = 66;
-            label11.Text = "Caducidad:";
+            label8.AutoSize = true;
+            label8.Location = new Point(385, 173);
+            label8.Name = "label8";
+            label8.Size = new Size(92, 21);
+            label8.TabIndex = 61;
+            label8.Text = "Descripcion:";
             // 
-            // dtpIngredienteCaducidad
+            // txtIngredienteDescripcion
             // 
-            dtpIngredienteCaducidad.Location = new Point(463, 268);
-            dtpIngredienteCaducidad.Name = "dtpIngredienteCaducidad";
-            dtpIngredienteCaducidad.Size = new Size(306, 26);
-            dtpIngredienteCaducidad.TabIndex = 67;
+            txtIngredienteDescripcion.Location = new Point(370, 197);
+            txtIngredienteDescripcion.Name = "txtIngredienteDescripcion";
+            txtIngredienteDescripcion.Size = new Size(583, 26);
+            txtIngredienteDescripcion.TabIndex = 60;
+            // 
+            // txtIngredienteNombre
+            // 
+            txtIngredienteNombre.Location = new Point(22, 197);
+            txtIngredienteNombre.Name = "txtIngredienteNombre";
+            txtIngredienteNombre.Size = new Size(342, 26);
+            txtIngredienteNombre.TabIndex = 59;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(36, 173);
+            label6.Name = "label6";
+            label6.Size = new Size(68, 21);
+            label6.TabIndex = 58;
+            label6.Text = "Nombre:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(9, 7);
+            label15.Name = "label15";
+            label15.Size = new Size(189, 26);
+            label15.TabIndex = 57;
+            label15.Text = "Agregar ingrediente";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(22, 124);
+            label4.Name = "label4";
+            label4.Size = new Size(82, 21);
+            label4.TabIndex = 56;
+            label4.Text = "Proveedor:";
+            // 
+            // cbxIngredienteProveedor
+            // 
+            cbxIngredienteProveedor.FormattingEnabled = true;
+            cbxIngredienteProveedor.Location = new Point(110, 121);
+            cbxIngredienteProveedor.Name = "cbxIngredienteProveedor";
+            cbxIngredienteProveedor.Size = new Size(843, 29);
+            cbxIngredienteProveedor.TabIndex = 55;
+            cbxIngredienteProveedor.Text = "Proveedor del ingrediente";
+            // 
+            // btnIngredienteCancelar
+            // 
+            btnIngredienteCancelar.Cursor = Cursors.Hand;
+            btnIngredienteCancelar.Location = new Point(10, 522);
+            btnIngredienteCancelar.Name = "btnIngredienteCancelar";
+            btnIngredienteCancelar.Size = new Size(134, 34);
+            btnIngredienteCancelar.TabIndex = 54;
+            btnIngredienteCancelar.Text = "Cancelar";
+            btnIngredienteCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnIngredienteAgregar
+            // 
+            btnIngredienteAgregar.Cursor = Cursors.Hand;
+            btnIngredienteAgregar.Location = new Point(803, 522);
+            btnIngredienteAgregar.Name = "btnIngredienteAgregar";
+            btnIngredienteAgregar.Size = new Size(150, 34);
+            btnIngredienteAgregar.TabIndex = 53;
+            btnIngredienteAgregar.Text = "Agregar ingrediente";
+            btnIngredienteAgregar.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(btnIngredienteEliminar);
+            tabPage2.Controls.Add(btnIngredienteModificar);
+            tabPage2.Controls.Add(dgvConsultaCliente);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Location = new Point(4, 30);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(962, 565);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Consultar";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnIngredienteEliminar
             // 
@@ -481,22 +470,27 @@
             // dgvConsultaCliente
             // 
             dgvConsultaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsultaCliente.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Proveedor, CantidadActual, CantidadMinima, Caducidad });
+            dgvConsultaCliente.Columns.AddRange(new DataGridViewColumn[] { Nombre, Proveedor, CantidadActual, CantidadMinima, Caducidad });
             dgvConsultaCliente.Location = new Point(6, 39);
             dgvConsultaCliente.Name = "dgvConsultaCliente";
             dgvConsultaCliente.RowTemplate.Height = 25;
             dgvConsultaCliente.Size = new Size(779, 520);
             dgvConsultaCliente.TabIndex = 59;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(9, 7);
+            label5.Name = "label5";
+            label5.Size = new Size(203, 26);
+            label5.TabIndex = 58;
+            label5.Text = "Consultar ingrediente";
+            // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            // 
-            // Descripcion
-            // 
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
             // 
             // Proveedor
             // 
@@ -587,7 +581,6 @@
         private Button btnIngredienteModificar;
         private DataGridView dgvConsultaCliente;
         private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn Proveedor;
         private DataGridViewTextBoxColumn CantidadActual;
         private DataGridViewTextBoxColumn CantidadMinima;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,25 @@ namespace Espresso_Esencial
         public employee()
         {
             InitializeComponent();
+            using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Empleado"))
+            {
+                if (data != null)
+                {
+                    while (data.Read())
+                    {
+                        dgvConsultaEmpleado.Rows.Add(
+                            data["Apellido_Paterno"],
+                            data["Apellido_Materno"],
+                            data["Nombre"],
+                            data["Telefono"],
+                            data["Correo"],
+                            data["RFC"],
+                            data["Calle"],
+                            data["Numero_Calle"],
+                            data["Colonia"]);
+                    }
+                }
+            }
         }
 
         private void lnkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -69,6 +89,11 @@ namespace Espresso_Esencial
             ingredient ingredient = new ingredient();
             ingredient.Show();
             this.Close();
+        }
+
+        private void btnEmpleadoAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

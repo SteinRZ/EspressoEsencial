@@ -5,6 +5,7 @@ namespace Espresso_Esencial
         public login()
         {
             InitializeComponent();
+            lblError.Text = String.Empty;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -14,6 +15,12 @@ namespace Espresso_Esencial
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            string error;
+            if (!SystemUtils.ConnectToDatabase(txtUsername.Text, txtContraseña.Text, out error))
+            {
+                lblError.Text = error;
+                return;
+            }
             main main = new main();
             main.Show();
             this.Hide();
