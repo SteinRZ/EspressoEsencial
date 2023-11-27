@@ -48,33 +48,15 @@
             tabPage1 = new TabPage();
             label8 = new Label();
             lblTotal = new Label();
-            label6 = new Label();
             label5 = new Label();
             btnPedidoCancelar = new Button();
             btnPedidoRealizar = new Button();
             dgvListaPedido = new DataGridView();
-            Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
             tabProductos = new TabControl();
-            tabPage3 = new TabPage();
-            tabPage4 = new TabPage();
-            tabPage5 = new TabPage();
-            tabPage6 = new TabPage();
-            tabPage7 = new TabPage();
-            tabPage8 = new TabPage();
             tabPage2 = new TabPage();
-            btnPedidoEntregado = new Button();
             btnPedidoEliminar = new Button();
             btnPedidoConsultar = new Button();
-            btnPedidoModificar = new Button();
             dgvConsultaPedido = new DataGridView();
-            NumeroPedido = new DataGridViewTextBoxColumn();
-            Fecha = new DataGridViewTextBoxColumn();
-            Hora = new DataGridViewTextBoxColumn();
-            TotalPedido = new DataGridViewTextBoxColumn();
-            Entregado = new DataGridViewTextBoxColumn();
             label4 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -82,7 +64,6 @@
             tabAgregarConsultar.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListaPedido).BeginInit();
-            tabProductos.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvConsultaPedido).BeginInit();
             SuspendLayout();
@@ -285,12 +266,12 @@
             tabAgregarConsultar.SelectedIndex = 0;
             tabAgregarConsultar.Size = new Size(970, 599);
             tabAgregarConsultar.TabIndex = 8;
+            tabAgregarConsultar.Selecting += tabAgregarConsultar_Selecting;
             // 
             // tabPage1
             // 
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(lblTotal);
-            tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(btnPedidoCancelar);
             tabPage1.Controls.Add(btnPedidoRealizar);
@@ -317,20 +298,11 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(75, 481);
+            lblTotal.Location = new Point(63, 481);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(50, 21);
             lblTotal.TabIndex = 6;
-            lblTotal.Text = "00.00";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(63, 481);
-            label6.Name = "label6";
-            label6.Size = new Size(19, 21);
-            label6.TabIndex = 5;
-            label6.Text = "$";
+            lblTotal.Text = "$0.00";
             // 
             // label5
             // 
@@ -350,6 +322,7 @@
             btnPedidoCancelar.TabIndex = 3;
             btnPedidoCancelar.Text = "Cancelar pedido";
             btnPedidoCancelar.UseVisualStyleBackColor = true;
+            btnPedidoCancelar.Click += btnPedidoCancelar_Click;
             // 
             // btnPedidoRealizar
             // 
@@ -360,120 +333,29 @@
             btnPedidoRealizar.TabIndex = 2;
             btnPedidoRealizar.Text = "Realizar pedido";
             btnPedidoRealizar.UseVisualStyleBackColor = true;
+            btnPedidoRealizar.Click += btnPedidoRealizar_Click;
             // 
             // dgvListaPedido
             // 
             dgvListaPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListaPedido.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad, Total });
             dgvListaPedido.Location = new Point(6, 37);
             dgvListaPedido.Name = "dgvListaPedido";
             dgvListaPedido.RowTemplate.Height = 25;
             dgvListaPedido.Size = new Size(373, 441);
             dgvListaPedido.TabIndex = 1;
             // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.Name = "Producto";
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            Precio.Width = 75;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cant";
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 50;
-            // 
-            // Total
-            // 
-            Total.HeaderText = "Total";
-            Total.Name = "Total";
-            Total.Width = 75;
-            // 
             // tabProductos
             // 
-            tabProductos.Controls.Add(tabPage3);
-            tabProductos.Controls.Add(tabPage4);
-            tabProductos.Controls.Add(tabPage5);
-            tabProductos.Controls.Add(tabPage6);
-            tabProductos.Controls.Add(tabPage7);
-            tabProductos.Controls.Add(tabPage8);
             tabProductos.Location = new Point(385, 7);
             tabProductos.Name = "tabProductos";
             tabProductos.SelectedIndex = 0;
             tabProductos.Size = new Size(577, 562);
             tabProductos.TabIndex = 0;
             // 
-            // tabPage3
-            // 
-            tabPage3.Location = new Point(4, 30);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(569, 528);
-            tabPage3.TabIndex = 0;
-            tabPage3.Text = "Cafes";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            tabPage4.Location = new Point(4, 24);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(569, 534);
-            tabPage4.TabIndex = 1;
-            tabPage4.Text = "Te";
-            tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            tabPage5.Location = new Point(4, 24);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(569, 534);
-            tabPage5.TabIndex = 2;
-            tabPage5.Text = "Alimentos";
-            tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            tabPage6.Location = new Point(4, 24);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(569, 534);
-            tabPage6.TabIndex = 3;
-            tabPage6.Text = "Jugos";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            tabPage7.Location = new Point(4, 24);
-            tabPage7.Name = "tabPage7";
-            tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(569, 534);
-            tabPage7.TabIndex = 4;
-            tabPage7.Text = "Batidos";
-            tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            tabPage8.Location = new Point(4, 24);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Padding = new Padding(3);
-            tabPage8.Size = new Size(569, 534);
-            tabPage8.TabIndex = 5;
-            tabPage8.Text = "Productos extra";
-            tabPage8.UseVisualStyleBackColor = true;
-            // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(btnPedidoEntregado);
             tabPage2.Controls.Add(btnPedidoEliminar);
             tabPage2.Controls.Add(btnPedidoConsultar);
-            tabPage2.Controls.Add(btnPedidoModificar);
             tabPage2.Controls.Add(dgvConsultaPedido);
             tabPage2.Controls.Add(label4);
             tabPage2.Location = new Point(4, 30);
@@ -484,25 +366,16 @@
             tabPage2.Text = "Consultar";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnPedidoEntregado
-            // 
-            btnPedidoEntregado.Cursor = Cursors.Hand;
-            btnPedidoEntregado.Location = new Point(789, 496);
-            btnPedidoEntregado.Name = "btnPedidoEntregado";
-            btnPedidoEntregado.Size = new Size(165, 60);
-            btnPedidoEntregado.TabIndex = 5;
-            btnPedidoEntregado.Text = "Marcar como entregado";
-            btnPedidoEntregado.UseVisualStyleBackColor = true;
-            // 
             // btnPedidoEliminar
             // 
             btnPedidoEliminar.Cursor = Cursors.Hand;
-            btnPedidoEliminar.Location = new Point(789, 126);
+            btnPedidoEliminar.Location = new Point(789, 81);
             btnPedidoEliminar.Name = "btnPedidoEliminar";
             btnPedidoEliminar.Size = new Size(165, 40);
             btnPedidoEliminar.TabIndex = 4;
             btnPedidoEliminar.Text = "Eliminar";
             btnPedidoEliminar.UseVisualStyleBackColor = true;
+            btnPedidoEliminar.Click += btnPedidoEliminar_Click;
             // 
             // btnPedidoConsultar
             // 
@@ -513,51 +386,16 @@
             btnPedidoConsultar.TabIndex = 3;
             btnPedidoConsultar.Text = "Consultar";
             btnPedidoConsultar.UseVisualStyleBackColor = true;
-            // 
-            // btnPedidoModificar
-            // 
-            btnPedidoModificar.Cursor = Cursors.Hand;
-            btnPedidoModificar.Location = new Point(789, 81);
-            btnPedidoModificar.Name = "btnPedidoModificar";
-            btnPedidoModificar.Size = new Size(165, 40);
-            btnPedidoModificar.TabIndex = 2;
-            btnPedidoModificar.Text = "Modificar";
-            btnPedidoModificar.UseVisualStyleBackColor = true;
+            btnPedidoConsultar.Click += btnPedidoConsultar_Click;
             // 
             // dgvConsultaPedido
             // 
             dgvConsultaPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsultaPedido.Columns.AddRange(new DataGridViewColumn[] { NumeroPedido, Fecha, Hora, TotalPedido, Entregado });
             dgvConsultaPedido.Location = new Point(9, 36);
             dgvConsultaPedido.Name = "dgvConsultaPedido";
             dgvConsultaPedido.RowTemplate.Height = 25;
             dgvConsultaPedido.Size = new Size(774, 520);
             dgvConsultaPedido.TabIndex = 1;
-            // 
-            // NumeroPedido
-            // 
-            NumeroPedido.HeaderText = "Numero pedido";
-            NumeroPedido.Name = "NumeroPedido";
-            // 
-            // Fecha
-            // 
-            Fecha.HeaderText = "Fecha";
-            Fecha.Name = "Fecha";
-            // 
-            // Hora
-            // 
-            Hora.HeaderText = "Hora";
-            Hora.Name = "Hora";
-            // 
-            // TotalPedido
-            // 
-            TotalPedido.HeaderText = "Total";
-            TotalPedido.Name = "TotalPedido";
-            // 
-            // Entregado
-            // 
-            Entregado.HeaderText = "Entregado";
-            Entregado.Name = "Entregado";
             // 
             // label4
             // 
@@ -594,7 +432,6 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListaPedido).EndInit();
-            tabProductos.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvConsultaPedido).EndInit();
@@ -618,36 +455,19 @@
         private LinkLabel lnkProducto;
         private LinkLabel lnkCliente;
         private Label lblEmpleado;
-        private TabControl tabProductos;
-        private TabPage tabPage3;
-        private TabPage tabPage4;
-        private TabPage tabPage5;
-        private TabPage tabPage6;
-        private TabPage tabPage7;
         private Button btnPedidoCancelar;
         private Button btnPedidoRealizar;
         private DataGridView dgvListaPedido;
-        private TabPage tabPage8;
         private Label lblTotal;
-        private Label label6;
         private Label label5;
         private Label label7;
         private DataGridView dgvConsultaPedido;
         private Label label4;
-        private Button btnPedidoEntregado;
         private Button btnPedidoEliminar;
         private Button btnPedidoConsultar;
-        private Button btnPedidoModificar;
         private LinkLabel lnkIngrediente;
         private Label label8;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn Total;
-        private DataGridViewTextBoxColumn NumeroPedido;
-        private DataGridViewTextBoxColumn Fecha;
-        private DataGridViewTextBoxColumn Hora;
-        private DataGridViewTextBoxColumn TotalPedido;
         private DataGridViewTextBoxColumn Entregado;
+        private TabControl tabProductos;
     }
 }

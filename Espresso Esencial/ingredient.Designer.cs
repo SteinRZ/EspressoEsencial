@@ -63,14 +63,8 @@
             btnIngredienteAgregar = new Button();
             tabPage2 = new TabPage();
             btnIngredienteEliminar = new Button();
-            btnIngredienteModificar = new Button();
             dgvConsultaCliente = new DataGridView();
             label5 = new Label();
-            Nombre = new DataGridViewTextBoxColumn();
-            Proveedor = new DataGridViewTextBoxColumn();
-            CantidadActual = new DataGridViewTextBoxColumn();
-            CantidadMinima = new DataGridViewTextBoxColumn();
-            Caducidad = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -279,6 +273,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(970, 599);
             tabControl1.TabIndex = 17;
+            tabControl1.Selecting += tabControl1_Selecting;
             // 
             // tabPage1
             // 
@@ -432,11 +427,11 @@
             btnIngredienteAgregar.TabIndex = 53;
             btnIngredienteAgregar.Text = "Agregar ingrediente";
             btnIngredienteAgregar.UseVisualStyleBackColor = true;
+            btnIngredienteAgregar.Click += btnIngredienteAgregar_Click;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(btnIngredienteEliminar);
-            tabPage2.Controls.Add(btnIngredienteModificar);
             tabPage2.Controls.Add(dgvConsultaCliente);
             tabPage2.Controls.Add(label5);
             tabPage2.Location = new Point(4, 30);
@@ -450,27 +445,17 @@
             // btnIngredienteEliminar
             // 
             btnIngredienteEliminar.Cursor = Cursors.Hand;
-            btnIngredienteEliminar.Location = new Point(791, 85);
+            btnIngredienteEliminar.Location = new Point(791, 39);
             btnIngredienteEliminar.Name = "btnIngredienteEliminar";
             btnIngredienteEliminar.Size = new Size(165, 40);
             btnIngredienteEliminar.TabIndex = 61;
             btnIngredienteEliminar.Text = "Eliminar";
             btnIngredienteEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnIngredienteModificar
-            // 
-            btnIngredienteModificar.Cursor = Cursors.Hand;
-            btnIngredienteModificar.Location = new Point(791, 39);
-            btnIngredienteModificar.Name = "btnIngredienteModificar";
-            btnIngredienteModificar.Size = new Size(165, 40);
-            btnIngredienteModificar.TabIndex = 60;
-            btnIngredienteModificar.Text = "Modificar";
-            btnIngredienteModificar.UseVisualStyleBackColor = true;
+            btnIngredienteEliminar.Click += btnIngredienteEliminar_Click;
             // 
             // dgvConsultaCliente
             // 
             dgvConsultaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsultaCliente.Columns.AddRange(new DataGridViewColumn[] { Nombre, Proveedor, CantidadActual, CantidadMinima, Caducidad });
             dgvConsultaCliente.Location = new Point(6, 39);
             dgvConsultaCliente.Name = "dgvConsultaCliente";
             dgvConsultaCliente.RowTemplate.Height = 25;
@@ -486,31 +471,6 @@
             label5.Size = new Size(203, 26);
             label5.TabIndex = 58;
             label5.Text = "Consultar ingrediente";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Proveedor
-            // 
-            Proveedor.HeaderText = "Proveedor";
-            Proveedor.Name = "Proveedor";
-            // 
-            // CantidadActual
-            // 
-            CantidadActual.HeaderText = "Cant actual";
-            CantidadActual.Name = "CantidadActual";
-            // 
-            // CantidadMinima
-            // 
-            CantidadMinima.HeaderText = "Cant minima";
-            CantidadMinima.Name = "CantidadMinima";
-            // 
-            // Caducidad
-            // 
-            Caducidad.HeaderText = "Caducidad";
-            Caducidad.Name = "Caducidad";
             // 
             // ingredient
             // 
@@ -578,12 +538,6 @@
         private TextBox txtIngredienteCantidadActual;
         private Label label9;
         private Button btnIngredienteEliminar;
-        private Button btnIngredienteModificar;
         private DataGridView dgvConsultaCliente;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Proveedor;
-        private DataGridViewTextBoxColumn CantidadActual;
-        private DataGridViewTextBoxColumn CantidadMinima;
-        private DataGridViewTextBoxColumn Caducidad;
     }
 }

@@ -17,6 +17,8 @@ namespace Espresso_Esencial
         public client()
         {
             InitializeComponent();
+            dgvConsultaCliente.Name = "Cliente";
+            dgvConsultaCliente.CellValueChanged += SystemUtils.GenericUpdate;
             lblEmpleado.Text = SystemUtils.Username;
         }
 
@@ -95,12 +97,13 @@ namespace Espresso_Esencial
             TabPage current = (sender as TabControl).SelectedTab;
             if (current.Text == "Consultar")
             {
-                dgvConsultaCliente.Rows.Clear();
+                /*dgvConsultaCliente.Rows.Clear();
                 using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Cliente"))
                 {
                     while (data.Read())
                     {
                         dgvConsultaCliente.Rows.Add(
+                            data["ID_Cliente"],
                             data["Apellido_Paterno"],
                             data["Apellido_Materno"],
                             data["Nombre"],
@@ -110,10 +113,53 @@ namespace Espresso_Esencial
                             data["Estudiante"]
                         );
                     }
-                }
+                }*/
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand("SELECT * FROM Cliente");
+                command.Connection = SystemUtils.Connection;
+                adapter.SelectCommand = command;
+                adapter.Fill(dt);
+                dgvConsultaCliente.DataSource = dt;
+                dgvConsultaCliente.Columns[0].Visible = false;
             }
         }
 
+        private void dgvConsultaCliente_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
 
+        }
+
+        private void btnClienteEliminar_Click(object sender, EventArgs e)
+        {
+            SystemUtils.DeleteFromTable(ref dgvConsultaCliente);
+        }
+
+        /*private void dgvConsultaCliente_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView grid = sender as DataGridView;
+            //string oldValue = (string)grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            try
+            {
+                using (SqlCommand update = new SqlCommand($"UPDATE Cliente SET {grid.Columns[e.ColumnIndex].Name} = @valor WHERE ID_Cliente = @id"))
+                {
+                    update.Connection = SystemUtils.Connection;
+                    update.Parameters.AddWithValue("@valor", grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                    update.Parameters.AddWithValue("@id", grid.Rows[e.RowIndex].Cells[0].Value);
+                    if (MessageBox.Show("¿Estás seguro de cambiar el registro?", "UPDATE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        DataTable dt = grid.DataSource as DataTable;
+                        dt.RejectChanges();
+                        return;
+                    }
+                    update.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }*/
     }
 }

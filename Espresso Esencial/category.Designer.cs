@@ -45,18 +45,15 @@
             panel3 = new Panel();
             label2 = new Label();
             gpxCategoriaAgregar = new GroupBox();
-            label4 = new Label();
-            label5 = new Label();
-            txtCategoriaNombre = new TextBox();
-            txtCategoriaDescripcion = new TextBox();
             btnCategoriaCancelar = new Button();
+            txtCategoriaDescripcion = new TextBox();
             btnCategoriaAgregar = new Button();
+            txtCategoriaNombre = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
             gpxCategoriaConsulta = new GroupBox();
-            dgvCategoriaConsultar = new DataGridView();
             btnClienteEliminar = new Button();
-            btnClienteModificar = new Button();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
+            dgvCategoriaConsultar = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -269,38 +266,6 @@
             gpxCategoriaAgregar.TabStop = false;
             gpxCategoriaAgregar.Text = "Agregar categoria";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(37, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(68, 21);
-            label4.TabIndex = 15;
-            label4.Text = "Nombre:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(13, 72);
-            label5.Name = "label5";
-            label5.Size = new Size(92, 21);
-            label5.TabIndex = 16;
-            label5.Text = "Descripcion:";
-            // 
-            // txtCategoriaNombre
-            // 
-            txtCategoriaNombre.Location = new Point(111, 35);
-            txtCategoriaNombre.Name = "txtCategoriaNombre";
-            txtCategoriaNombre.Size = new Size(846, 26);
-            txtCategoriaNombre.TabIndex = 17;
-            // 
-            // txtCategoriaDescripcion
-            // 
-            txtCategoriaDescripcion.Location = new Point(111, 72);
-            txtCategoriaDescripcion.Name = "txtCategoriaDescripcion";
-            txtCategoriaDescripcion.Size = new Size(846, 26);
-            txtCategoriaDescripcion.TabIndex = 18;
-            // 
             // btnCategoriaCancelar
             // 
             btnCategoriaCancelar.Cursor = Cursors.Hand;
@@ -311,6 +276,13 @@
             btnCategoriaCancelar.Text = "Cancelar";
             btnCategoriaCancelar.UseVisualStyleBackColor = true;
             // 
+            // txtCategoriaDescripcion
+            // 
+            txtCategoriaDescripcion.Location = new Point(111, 72);
+            txtCategoriaDescripcion.Name = "txtCategoriaDescripcion";
+            txtCategoriaDescripcion.Size = new Size(846, 26);
+            txtCategoriaDescripcion.TabIndex = 18;
+            // 
             // btnCategoriaAgregar
             // 
             btnCategoriaAgregar.Cursor = Cursors.Hand;
@@ -320,11 +292,36 @@
             btnCategoriaAgregar.TabIndex = 27;
             btnCategoriaAgregar.Text = "Agregar categoria";
             btnCategoriaAgregar.UseVisualStyleBackColor = true;
+            btnCategoriaAgregar.Click += btnCategoriaAgregar_Click;
+            // 
+            // txtCategoriaNombre
+            // 
+            txtCategoriaNombre.Location = new Point(111, 35);
+            txtCategoriaNombre.Name = "txtCategoriaNombre";
+            txtCategoriaNombre.Size = new Size(846, 26);
+            txtCategoriaNombre.TabIndex = 17;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(13, 72);
+            label5.Name = "label5";
+            label5.Size = new Size(92, 21);
+            label5.TabIndex = 16;
+            label5.Text = "Descripcion:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(37, 38);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 21);
+            label4.TabIndex = 15;
+            label4.Text = "Nombre:";
             // 
             // gpxCategoriaConsulta
             // 
             gpxCategoriaConsulta.Controls.Add(btnClienteEliminar);
-            gpxCategoriaConsulta.Controls.Add(btnClienteModificar);
             gpxCategoriaConsulta.Controls.Add(dgvCategoriaConsultar);
             gpxCategoriaConsulta.Location = new Point(215, 264);
             gpxCategoriaConsulta.Name = "gpxCategoriaConsulta";
@@ -333,45 +330,25 @@
             gpxCategoriaConsulta.TabStop = false;
             gpxCategoriaConsulta.Text = "Consulta de categorias";
             // 
-            // dgvCategoriaConsultar
-            // 
-            dgvCategoriaConsultar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategoriaConsultar.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion });
-            dgvCategoriaConsultar.Location = new Point(6, 25);
-            dgvCategoriaConsultar.Name = "dgvCategoriaConsultar";
-            dgvCategoriaConsultar.RowTemplate.Height = 25;
-            dgvCategoriaConsultar.Size = new Size(780, 388);
-            dgvCategoriaConsultar.TabIndex = 0;
-            // 
             // btnClienteEliminar
             // 
             btnClienteEliminar.Cursor = Cursors.Hand;
-            btnClienteEliminar.Location = new Point(792, 68);
+            btnClienteEliminar.Location = new Point(792, 25);
             btnClienteEliminar.Name = "btnClienteEliminar";
             btnClienteEliminar.Size = new Size(165, 40);
             btnClienteEliminar.TabIndex = 19;
             btnClienteEliminar.Text = "Eliminar";
             btnClienteEliminar.UseVisualStyleBackColor = true;
+            btnClienteEliminar.Click += btnClienteEliminar_Click;
             // 
-            // btnClienteModificar
+            // dgvCategoriaConsultar
             // 
-            btnClienteModificar.Cursor = Cursors.Hand;
-            btnClienteModificar.Location = new Point(792, 23);
-            btnClienteModificar.Name = "btnClienteModificar";
-            btnClienteModificar.Size = new Size(165, 40);
-            btnClienteModificar.TabIndex = 18;
-            btnClienteModificar.Text = "Modificar";
-            btnClienteModificar.UseVisualStyleBackColor = true;
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Descripcion
-            // 
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
+            dgvCategoriaConsultar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategoriaConsultar.Location = new Point(6, 25);
+            dgvCategoriaConsultar.Name = "dgvCategoriaConsultar";
+            dgvCategoriaConsultar.RowTemplate.Height = 25;
+            dgvCategoriaConsultar.Size = new Size(780, 388);
+            dgvCategoriaConsultar.TabIndex = 0;
             // 
             // category
             // 
@@ -428,8 +405,5 @@
         private GroupBox gpxCategoriaConsulta;
         private DataGridView dgvCategoriaConsultar;
         private Button btnClienteEliminar;
-        private Button btnClienteModificar;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
     }
 }

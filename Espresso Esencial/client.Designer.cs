@@ -61,15 +61,7 @@
             tabPage2 = new TabPage();
             btnClienteConsultaHistorial = new Button();
             btnClienteEliminar = new Button();
-            btnClienteModificar = new Button();
             dgvConsultaCliente = new DataGridView();
-            ApellidoPaterno = new DataGridViewTextBoxColumn();
-            ApellidoMaterno = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            CorreoElectronico = new DataGridViewTextBoxColumn();
-            Punto = new DataGridViewTextBoxColumn();
-            Estudiante = new DataGridViewTextBoxColumn();
             label4 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -403,7 +395,6 @@
             // 
             tabPage2.Controls.Add(btnClienteConsultaHistorial);
             tabPage2.Controls.Add(btnClienteEliminar);
-            tabPage2.Controls.Add(btnClienteModificar);
             tabPage2.Controls.Add(dgvConsultaCliente);
             tabPage2.Controls.Add(label4);
             tabPage2.Location = new Point(4, 30);
@@ -427,67 +418,23 @@
             // btnClienteEliminar
             // 
             btnClienteEliminar.Cursor = Cursors.Hand;
-            btnClienteEliminar.Location = new Point(786, 134);
+            btnClienteEliminar.Location = new Point(788, 88);
             btnClienteEliminar.Name = "btnClienteEliminar";
             btnClienteEliminar.Size = new Size(165, 40);
             btnClienteEliminar.TabIndex = 17;
             btnClienteEliminar.Text = "Eliminar";
             btnClienteEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnClienteModificar
-            // 
-            btnClienteModificar.Cursor = Cursors.Hand;
-            btnClienteModificar.Location = new Point(786, 88);
-            btnClienteModificar.Name = "btnClienteModificar";
-            btnClienteModificar.Size = new Size(165, 40);
-            btnClienteModificar.TabIndex = 15;
-            btnClienteModificar.Text = "Modificar";
-            btnClienteModificar.UseVisualStyleBackColor = true;
+            btnClienteEliminar.Click += btnClienteEliminar_Click;
             // 
             // dgvConsultaCliente
             // 
             dgvConsultaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsultaCliente.Columns.AddRange(new DataGridViewColumn[] { ApellidoPaterno, ApellidoMaterno, Nombre, Telefono, CorreoElectronico, Punto, Estudiante });
             dgvConsultaCliente.Location = new Point(6, 42);
             dgvConsultaCliente.Name = "dgvConsultaCliente";
             dgvConsultaCliente.RowTemplate.Height = 25;
             dgvConsultaCliente.Size = new Size(774, 520);
             dgvConsultaCliente.TabIndex = 14;
-            // 
-            // ApellidoPaterno
-            // 
-            ApellidoPaterno.HeaderText = "Apellido paterno";
-            ApellidoPaterno.Name = "ApellidoPaterno";
-            // 
-            // ApellidoMaterno
-            // 
-            ApellidoMaterno.HeaderText = "Apellido materno";
-            ApellidoMaterno.Name = "ApellidoMaterno";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre(s)";
-            Nombre.Name = "Nombre";
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
-            // 
-            // CorreoElectronico
-            // 
-            CorreoElectronico.HeaderText = "Correo electronico";
-            CorreoElectronico.Name = "CorreoElectronico";
-            // 
-            // Punto
-            // 
-            Punto.HeaderText = "Puntos";
-            Punto.Name = "Punto";
-            // 
-            // Estudiante
-            // 
-            Estudiante.HeaderText = "Estudiante";
-            Estudiante.Name = "Estudiante";
+            dgvConsultaCliente.CellValidating += dgvConsultaCliente_CellValidating;
             // 
             // label4
             // 
@@ -563,14 +510,6 @@
         private Button btnClienteAgregar;
         private DataGridView dgvConsultaCliente;
         private Button btnClienteEliminar;
-        private Button btnClienteModificar;
-        private DataGridViewTextBoxColumn ApellidoPaterno;
-        private DataGridViewTextBoxColumn ApellidoMaterno;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Telefono;
-        private DataGridViewTextBoxColumn CorreoElectronico;
-        private DataGridViewTextBoxColumn Punto;
-        private DataGridViewTextBoxColumn Estudiante;
         private Button btnClienteConsultaHistorial;
         private CheckBox chkEstudiante;
     }

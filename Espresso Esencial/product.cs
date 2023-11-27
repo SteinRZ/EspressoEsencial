@@ -28,6 +28,8 @@ namespace Espresso_Esencial
         public product()
         {
             InitializeComponent();
+            dgvConsultaProducto.Name = "Producto";
+            dgvConsultaProducto.CellValueChanged += SystemUtils.GenericUpdate;
             dgvIngredientes.AutoGenerateColumns = true;
             ingredients = new BindingList<Ingredient>();
             source = new BindingSource(ingredients, null);
@@ -44,22 +46,6 @@ namespace Espresso_Esencial
                 while (ingredientList.Read())
                 {
                     cbxProductoIngrediente.Items.Add(ingredientList["Nombre"]);
-                }
-            }
-            using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Producto"))
-            {
-                if (data != null)
-                {
-                    while (data.Read())
-                    {
-                        dgvConsultaProducto.Rows.Add(
-                            data["Nombre"],
-                            data["Descripcion"],
-                            data["Precio"],
-                            data["Cantidad_Actual"],
-                            data["Cantidad_Minima"]
-                            );
-                    }
                 }
             }
         }
@@ -188,6 +174,7 @@ namespace Espresso_Esencial
             TabPage current = (sender as TabControl).SelectedTab;
             if (current.Text == "Consultar")
             {
+                /*
                 dgvConsultaProducto.Rows.Clear();
                 using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Producto"))
                 {
@@ -196,6 +183,7 @@ namespace Espresso_Esencial
                         while (data.Read())
                         {
                             dgvConsultaProducto.Rows.Add(
+                                data["ID_Producto"],
                                 data["Nombre"],
                                 data["Descripcion"],
                                 data["Precio"],
@@ -205,7 +193,37 @@ namespace Espresso_Esencial
                         }
                     }
                 }
+                */
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand("SELECT * FROM Producto");
+                command.Connection = SystemUtils.Connection;
+                adapter.SelectCommand = command;
+                adapter.Fill(dt);
+                dgvConsultaProducto.DataSource = dt;
+                dgvConsultaProducto.Columns[0].Visible = false;
             }
+        }
+
+        private void btnProductoConsultar_Click(object sender, EventArgs e)
+        {
+            string id = dgvConsultaProducto.CurrentRow.Cells["ID_Producto"].Value.ToString();
+            using (IDataReader d = SystemUtils.MakeQuery($"SELECT I.Nombre, PI.Cantidad_Necesaria FROM Producto_Ingrediente PI LEFT JOIN Ingrediente I ON PI.ID_Ingrediente = I.ID_Ingrediente WHERE ID_Producto = {id}"))
+            {
+                string ingredients = String.Empty;
+                int cnt = 0;
+                while (d.Read())
+                {
+                    ingredients += $"({cnt++}): [Nombre: {d.GetString(0)}, Cantidad: {d.GetDouble(1)}]\r\n";
+                }
+                if (ingredients == String.Empty) ingredients = "No hay ingredientes asociados con el producto.";
+                MessageBox.Show(ingredients);
+            }
+        }
+
+        private void btnProductoEliminar_Click(object sender, EventArgs e)
+        {
+            SystemUtils.DeleteFromTable(ref dgvConsultaProducto);
         }
     }
 }

@@ -71,14 +71,8 @@
             tabPage2 = new TabPage();
             label14 = new Label();
             dgvConsultaProducto = new DataGridView();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            CantidadActual = new DataGridViewTextBoxColumn();
-            CantidadMinima = new DataGridViewTextBoxColumn();
             btnProductoEliminar = new Button();
             btnProductoConsultar = new Button();
-            btnProductoModificar = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -518,7 +512,6 @@
             tabPage2.Controls.Add(dgvConsultaProducto);
             tabPage2.Controls.Add(btnProductoEliminar);
             tabPage2.Controls.Add(btnProductoConsultar);
-            tabPage2.Controls.Add(btnProductoModificar);
             tabPage2.Location = new Point(4, 30);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -540,47 +533,22 @@
             // dgvConsultaProducto
             // 
             dgvConsultaProducto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsultaProducto.Columns.AddRange(new DataGridViewColumn[] { Nombre, Descripcion, Precio, CantidadActual, CantidadMinima });
             dgvConsultaProducto.Location = new Point(6, 36);
             dgvConsultaProducto.Name = "dgvConsultaProducto";
             dgvConsultaProducto.RowTemplate.Height = 25;
             dgvConsultaProducto.Size = new Size(774, 520);
             dgvConsultaProducto.TabIndex = 8;
             // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Descripcion
-            // 
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            // 
-            // CantidadActual
-            // 
-            CantidadActual.HeaderText = "Cant actual";
-            CantidadActual.Name = "CantidadActual";
-            // 
-            // CantidadMinima
-            // 
-            CantidadMinima.HeaderText = "Cant minima";
-            CantidadMinima.Name = "CantidadMinima";
-            // 
             // btnProductoEliminar
             // 
             btnProductoEliminar.Cursor = Cursors.Hand;
-            btnProductoEliminar.Location = new Point(788, 145);
+            btnProductoEliminar.Location = new Point(791, 100);
             btnProductoEliminar.Name = "btnProductoEliminar";
             btnProductoEliminar.Size = new Size(165, 40);
             btnProductoEliminar.TabIndex = 7;
             btnProductoEliminar.Text = "Eliminar";
             btnProductoEliminar.UseVisualStyleBackColor = true;
+            btnProductoEliminar.Click += btnProductoEliminar_Click;
             // 
             // btnProductoConsultar
             // 
@@ -591,16 +559,7 @@
             btnProductoConsultar.TabIndex = 6;
             btnProductoConsultar.Text = "Consultar ingredientes";
             btnProductoConsultar.UseVisualStyleBackColor = true;
-            // 
-            // btnProductoModificar
-            // 
-            btnProductoModificar.Cursor = Cursors.Hand;
-            btnProductoModificar.Location = new Point(788, 100);
-            btnProductoModificar.Name = "btnProductoModificar";
-            btnProductoModificar.Size = new Size(165, 40);
-            btnProductoModificar.TabIndex = 5;
-            btnProductoModificar.Text = "Modificar";
-            btnProductoModificar.UseVisualStyleBackColor = true;
+            btnProductoConsultar.Click += btnProductoConsultar_Click;
             // 
             // product
             // 
@@ -674,13 +633,7 @@
         private Button btnProductoCancelar;
         private Button btnProductoEliminar;
         private Button btnProductoConsultar;
-        private Button btnProductoModificar;
         private DataGridView dgvConsultaProducto;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn CantidadActual;
-        private DataGridViewTextBoxColumn CantidadMinima;
         private LinkLabel lnkIngrediente;
         private Label label15;
         private Label label14;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,15 @@ namespace Espresso_Esencial
         public category()
         {
             InitializeComponent();
+            dgvCategoriaConsultar.Name = "Categoria";
+            dgvCategoriaConsultar.CellValueChanged += SystemUtils.GenericUpdate;
+            ReloadDGV();
+        }
+
+        private void ReloadDGV()
+        {
+            /*
+            dgvCategoriaConsultar.Rows.Clear();
             using (IDataReader data = SystemUtils.MakeQuery("SELECT * FROM Categoria"))
             {
                 if (data != null)
@@ -28,6 +38,15 @@ namespace Espresso_Esencial
                     }
                 }
             }
+            */
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT * FROM Categoria");
+            command.Connection = SystemUtils.Connection;
+            adapter.SelectCommand = command;
+            adapter.Fill(dt);
+            dgvCategoriaConsultar.DataSource = dt;
+            dgvCategoriaConsultar.Columns[0].Visible = false;
         }
 
         private void lnkInicio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -77,6 +96,31 @@ namespace Espresso_Esencial
             ingredient ingredient = new ingredient();
             ingredient.Show();
             this.Close();
+        }
+
+        private void btnCategoriaAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlCommand insert = new SqlCommand("INSERT INTO Categoria(Nombre, Descripcion) VALUES(@nombre, @descripcion)"))
+                {
+                    insert.Connection = SystemUtils.Connection;
+                    insert.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = txtCategoriaNombre.Text.ToUpper();
+                    insert.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = txtCategoriaDescripcion.Text.ToUpper();
+                    insert.ExecuteNonQuery();
+                }
+                MessageBox.Show("Se insertó la categoria correctamente.");
+                ReloadDGV();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnClienteEliminar_Click(object sender, EventArgs e)
+        {
+            SystemUtils.DeleteFromTable(ref dgvCategoriaConsultar);
         }
     }
 }

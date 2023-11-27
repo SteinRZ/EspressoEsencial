@@ -53,10 +53,7 @@
             label12 = new Label();
             gpxCategoriaConsulta = new GroupBox();
             btnProveedorEliminar = new Button();
-            btnProveedorModificar = new Button();
             dgvProveedorConsultar = new DataGridView();
-            Nombre = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -295,6 +292,7 @@
             btnProveedorAgregar.TabIndex = 27;
             btnProveedorAgregar.Text = "Agregar proveedor";
             btnProveedorAgregar.UseVisualStyleBackColor = true;
+            btnProveedorAgregar.Click += btnProveedorAgregar_Click;
             // 
             // txtProveedorNombre
             // 
@@ -324,7 +322,6 @@
             // gpxCategoriaConsulta
             // 
             gpxCategoriaConsulta.Controls.Add(btnProveedorEliminar);
-            gpxCategoriaConsulta.Controls.Add(btnProveedorModificar);
             gpxCategoriaConsulta.Controls.Add(dgvProveedorConsultar);
             gpxCategoriaConsulta.Location = new Point(215, 264);
             gpxCategoriaConsulta.Name = "gpxCategoriaConsulta";
@@ -336,42 +333,22 @@
             // btnProveedorEliminar
             // 
             btnProveedorEliminar.Cursor = Cursors.Hand;
-            btnProveedorEliminar.Location = new Point(792, 68);
+            btnProveedorEliminar.Location = new Point(792, 25);
             btnProveedorEliminar.Name = "btnProveedorEliminar";
             btnProveedorEliminar.Size = new Size(165, 40);
             btnProveedorEliminar.TabIndex = 19;
             btnProveedorEliminar.Text = "Eliminar";
             btnProveedorEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnProveedorModificar
-            // 
-            btnProveedorModificar.Cursor = Cursors.Hand;
-            btnProveedorModificar.Location = new Point(792, 23);
-            btnProveedorModificar.Name = "btnProveedorModificar";
-            btnProveedorModificar.Size = new Size(165, 40);
-            btnProveedorModificar.TabIndex = 18;
-            btnProveedorModificar.Text = "Modificar";
-            btnProveedorModificar.UseVisualStyleBackColor = true;
+            btnProveedorEliminar.Click += btnProveedorEliminar_Click;
             // 
             // dgvProveedorConsultar
             // 
             dgvProveedorConsultar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedorConsultar.Columns.AddRange(new DataGridViewColumn[] { Nombre, Telefono });
             dgvProveedorConsultar.Location = new Point(6, 25);
             dgvProveedorConsultar.Name = "dgvProveedorConsultar";
             dgvProveedorConsultar.RowTemplate.Height = 25;
             dgvProveedorConsultar.Size = new Size(780, 388);
             dgvProveedorConsultar.TabIndex = 0;
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
             // 
             // supplier
             // 
@@ -427,9 +404,6 @@
         private Label label12;
         private GroupBox gpxCategoriaConsulta;
         private Button btnProveedorEliminar;
-        private Button btnProveedorModificar;
         private DataGridView dgvProveedorConsultar;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Telefono;
     }
 }

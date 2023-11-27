@@ -59,13 +59,11 @@
             txtEmpleadoRFC = new TextBox();
             btnEmpleadoCancelar = new Button();
             btnEmpleadoAgregar = new Button();
-            cbxEmpleadoRol = new ComboBox();
             txtEmpleadoCorreo = new TextBox();
             txtEmpleadoTelefono = new TextBox();
             txtEmpleadoNombre = new TextBox();
             txtEmpleadoApellidoMaterno = new TextBox();
             txtEmpleadoApellidoPaterno = new TextBox();
-            label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
@@ -74,17 +72,7 @@
             label8 = new Label();
             tabPage2 = new TabPage();
             btnEmpleadoEliminar = new Button();
-            btnEmpleadoModificar = new Button();
             dgvConsultaEmpleado = new DataGridView();
-            ApellidoPaterno = new DataGridViewTextBoxColumn();
-            ApellidoMaterno = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            CorreoElectronico = new DataGridViewTextBoxColumn();
-            RFC = new DataGridViewTextBoxColumn();
-            Calle = new DataGridViewTextBoxColumn();
-            NumeroCalle = new DataGridViewTextBoxColumn();
-            Colonia = new DataGridViewTextBoxColumn();
             label4 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -294,6 +282,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(970, 599);
             tabControl1.TabIndex = 14;
+            tabControl1.Selecting += tabControl1_Selecting;
             // 
             // tabPage1
             // 
@@ -304,13 +293,11 @@
             tabPage1.Controls.Add(txtEmpleadoRFC);
             tabPage1.Controls.Add(btnEmpleadoCancelar);
             tabPage1.Controls.Add(btnEmpleadoAgregar);
-            tabPage1.Controls.Add(cbxEmpleadoRol);
             tabPage1.Controls.Add(txtEmpleadoCorreo);
             tabPage1.Controls.Add(txtEmpleadoTelefono);
             tabPage1.Controls.Add(txtEmpleadoNombre);
             tabPage1.Controls.Add(txtEmpleadoApellidoMaterno);
             tabPage1.Controls.Add(txtEmpleadoApellidoPaterno);
-            tabPage1.Controls.Add(label12);
             tabPage1.Controls.Add(label11);
             tabPage1.Controls.Add(label10);
             tabPage1.Controls.Add(label9);
@@ -441,16 +428,6 @@
             btnEmpleadoAgregar.UseVisualStyleBackColor = true;
             btnEmpleadoAgregar.Click += btnEmpleadoAgregar_Click;
             // 
-            // cbxEmpleadoRol
-            // 
-            cbxEmpleadoRol.DisplayMember = "SI";
-            cbxEmpleadoRol.FormattingEnabled = true;
-            cbxEmpleadoRol.Location = new Point(503, 283);
-            cbxEmpleadoRol.Name = "cbxEmpleadoRol";
-            cbxEmpleadoRol.Size = new Size(449, 29);
-            cbxEmpleadoRol.TabIndex = 38;
-            cbxEmpleadoRol.Text = "Rol del empleado";
-            // 
             // txtEmpleadoCorreo
             // 
             txtEmpleadoCorreo.Location = new Point(9, 226);
@@ -485,15 +462,6 @@
             txtEmpleadoApellidoPaterno.Name = "txtEmpleadoApellidoPaterno";
             txtEmpleadoApellidoPaterno.Size = new Size(450, 26);
             txtEmpleadoApellidoPaterno.TabIndex = 33;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(503, 262);
-            label12.Name = "label12";
-            label12.Size = new Size(36, 21);
-            label12.TabIndex = 32;
-            label12.Text = "Rol:";
             // 
             // label11
             // 
@@ -553,7 +521,6 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(btnEmpleadoEliminar);
-            tabPage2.Controls.Add(btnEmpleadoModificar);
             tabPage2.Controls.Add(dgvConsultaEmpleado);
             tabPage2.Controls.Add(label4);
             tabPage2.Location = new Point(4, 30);
@@ -567,78 +534,22 @@
             // btnEmpleadoEliminar
             // 
             btnEmpleadoEliminar.Cursor = Cursors.Hand;
-            btnEmpleadoEliminar.Location = new Point(791, 88);
+            btnEmpleadoEliminar.Location = new Point(791, 42);
             btnEmpleadoEliminar.Name = "btnEmpleadoEliminar";
             btnEmpleadoEliminar.Size = new Size(165, 40);
             btnEmpleadoEliminar.TabIndex = 19;
             btnEmpleadoEliminar.Text = "Eliminar";
             btnEmpleadoEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnEmpleadoModificar
-            // 
-            btnEmpleadoModificar.Cursor = Cursors.Hand;
-            btnEmpleadoModificar.Location = new Point(791, 42);
-            btnEmpleadoModificar.Name = "btnEmpleadoModificar";
-            btnEmpleadoModificar.Size = new Size(165, 40);
-            btnEmpleadoModificar.TabIndex = 18;
-            btnEmpleadoModificar.Text = "Modificar";
-            btnEmpleadoModificar.UseVisualStyleBackColor = true;
+            btnEmpleadoEliminar.Click += btnEmpleadoEliminar_Click;
             // 
             // dgvConsultaEmpleado
             // 
             dgvConsultaEmpleado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsultaEmpleado.Columns.AddRange(new DataGridViewColumn[] { ApellidoPaterno, ApellidoMaterno, Nombre, Telefono, CorreoElectronico, RFC, Calle, NumeroCalle, Colonia });
             dgvConsultaEmpleado.Location = new Point(9, 42);
             dgvConsultaEmpleado.Name = "dgvConsultaEmpleado";
             dgvConsultaEmpleado.RowTemplate.Height = 25;
             dgvConsultaEmpleado.Size = new Size(776, 520);
             dgvConsultaEmpleado.TabIndex = 15;
-            // 
-            // ApellidoPaterno
-            // 
-            ApellidoPaterno.HeaderText = "Apellido paterno";
-            ApellidoPaterno.Name = "ApellidoPaterno";
-            // 
-            // ApellidoMaterno
-            // 
-            ApellidoMaterno.HeaderText = "Apellido materno";
-            ApellidoMaterno.Name = "ApellidoMaterno";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre(s)";
-            Nombre.Name = "Nombre";
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
-            // 
-            // CorreoElectronico
-            // 
-            CorreoElectronico.HeaderText = "Correo electronico";
-            CorreoElectronico.Name = "CorreoElectronico";
-            // 
-            // RFC
-            // 
-            RFC.HeaderText = "RFC";
-            RFC.Name = "RFC";
-            // 
-            // Calle
-            // 
-            Calle.HeaderText = "Calle";
-            Calle.Name = "Calle";
-            // 
-            // NumeroCalle
-            // 
-            NumeroCalle.HeaderText = "Num calle";
-            NumeroCalle.Name = "NumeroCalle";
-            NumeroCalle.Width = 50;
-            // 
-            // Colonia
-            // 
-            Colonia.HeaderText = "Colonia";
-            Colonia.Name = "Colonia";
             // 
             // label4
             // 
@@ -729,16 +640,6 @@
         private Label label16;
         private DataGridView dgvConsultaEmpleado;
         private Button btnEmpleadoEliminar;
-        private Button btnEmpleadoModificar;
-        private DataGridViewTextBoxColumn ApellidoPaterno;
-        private DataGridViewTextBoxColumn ApellidoMaterno;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Telefono;
-        private DataGridViewTextBoxColumn CorreoElectronico;
-        private DataGridViewTextBoxColumn RFC;
-        private DataGridViewTextBoxColumn Calle;
-        private DataGridViewTextBoxColumn NumeroCalle;
-        private DataGridViewTextBoxColumn Colonia;
         private TextBox txtEmpleadoContraseña;
         private Label label17;
     }
